@@ -54,7 +54,7 @@ class Sesame_Service_Traiteur_Widget extends \Elementor\Widget_Base
             [
                 'label' => 'Sous-titre',
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => 'Découvrez nosdddddddd services de traiteur pour vos événements',
+                'default' => 'Découvrez nos services de traiteur pour vos événements',
             ]
         );
 
@@ -366,7 +366,7 @@ class Sesame_Service_Traiteur_Widget extends \Elementor\Widget_Base
 
         <div class="sesame-traiteur-container">
             <div class="sesame-traiteur-header">
-                <div class="sesame-traiteur-caption">dddddddd</div>
+                <div class="sesame-traiteur-caption">Service Traiteur</div>
                 <h2 class="sesame-traiteur-title"><?php echo esc_html($settings['title']); ?></h2>
                 <?php if (!empty($settings['subtitle'])): ?>
                     <div class="sesame-traiteur-subtitle"><?php echo esc_html($settings['subtitle']); ?></div>
