@@ -54,7 +54,7 @@ class Sesame_Service_Traiteur_Widget extends \Elementor\Widget_Base
             [
                 'label' => 'Sous-titre',
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => 'Découvrez nos services de traiteur pour vos événements',
+                'default' => 'Découvrez nosdddddddd services de traiteur pour vos événements',
             ]
         );
 
