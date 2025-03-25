@@ -453,9 +453,7 @@ class Sesame_Image_Gallery_Widget extends \Elementor\Widget_Base
                 0% {
                     opacity: calc({
                             {
-                                {
-                                settings.glow_opacity.size
-                            }
+                            settings.glow_opacity.size
                         }
                     }
 
@@ -465,9 +463,7 @@ class Sesame_Image_Gallery_Widget extends \Elementor\Widget_Base
             100% {
                 opacity: calc({
                         {
-                            {
-                            settings.glow_opacity.size
-                        }
+                        settings.glow_opacity.size
                     }
                 }
 

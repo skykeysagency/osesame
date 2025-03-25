@@ -171,28 +171,6 @@ class Sesame_Service_Traiteur_Widget extends \Elementor\Widget_Base
      */
     public function content_template()
     {
-        $settings = $this->get_settings_for_display();
-
-        // Récupérer les services de traiteur
-        $args = array(
-            'post_type' => 'catering',
-            'posts_per_page' => $settings['posts_per_page'],
-            'orderby' => 'date',
-            'order' => 'DESC',
-        );
-
-        // Ajouter le filtre taxonomique si des catégories sont sélectionnées et si la taxonomie existe
-        if (!empty($settings['taxonomy_filter']) && taxonomy_exists('catering_category')) {
-            $args['tax_query'] = array(
-                array(
-                    'taxonomy' => 'catering_category',
-                    'field' => 'term_id',
-                    'terms' => $settings['taxonomy_filter'],
-                ),
-            );
-        }
-
-        $services_query = new WP_Query($args);
         ?>
         <style>
             .sesame-traiteur-container {
@@ -367,66 +345,34 @@ class Sesame_Service_Traiteur_Widget extends \Elementor\Widget_Base
         <div class="sesame-traiteur-container">
             <div class="sesame-traiteur-header">
                 <div class="sesame-traiteur-caption">Service Traiteur</div>
-                <h2 class="sesame-traiteur-title"><?php echo esc_html($settings['title']); ?></h2>
-                <?php if (!empty($settings['subtitle'])): ?>
-                    <div class="sesame-traiteur-subtitle"><?php echo esc_html($settings['subtitle']); ?></div>
-                <?php endif; ?>
+                <h2 class="sesame-traiteur-title">{{{ settings.title }}}</h2>
+                <# if ( settings.subtitle ) { #>
+                    <div class="sesame-traiteur-subtitle">{{{ settings.subtitle }}}</div>
+                    <# } #>
             </div>
 
-            <?php if ($services_query->have_posts()): ?>
-                <div class="sesame-services-grid">
-                    <?php while ($services_query->have_posts()):
-                        $services_query->the_post();
-                        $categories = taxonomy_exists('catering_category') ? get_the_terms(get_the_ID(), 'catering_category') : array();
-                        $featured_image = get_field('featured_image');
-                        $gallery_images = get_field('gallery');
-                        if (!$featured_image) {
-                            $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                        }
-                        ?>
-                        <div class="sesame-service-item">
-                            <?php if ($featured_image): ?>
-                                <div class="sesame-service-image">
-                                    <img src="<?php echo esc_url($featured_image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                                </div>
-                            <?php endif; ?>
-
-                            <div class="sesame-service-content">
-                                <?php if ($categories && !is_wp_error($categories)): ?>
-                                    <div class="sesame-service-categories">
-                                        <?php foreach ($categories as $category): ?>
-                                            <span class="sesame-service-category"><?php echo esc_html($category->name); ?></span>
-                                        <?php endforeach; ?>
-                                    </div>
-                                <?php endif; ?>
-
-                                <h3 class="sesame-service-title"><?php the_title(); ?></h3>
-                                <div class="sesame-service-description"><?php echo wp_trim_words(get_field('short_description'), 20); ?>
-                                </div>
-
-                                <?php if ($gallery_images && is_array($gallery_images)): ?>
-                                    <div class="sesame-service-gallery">
-                                        <?php foreach (array_slice($gallery_images, 0, 3) as $image): ?>
-                                            <div class="sesame-gallery-image">
-                                                <img src="<?php echo esc_url($image); ?>"
-                                                    alt="<?php echo esc_attr(get_the_title()); ?> gallery">
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                <?php endif; ?>
-
-                                <a href="<?php the_permalink(); ?>" class="sesame-service-link">En savoir plus</a>
-                            </div>
+            <div class="sesame-services-grid">
+                <# /* Dans l'éditeur, on ne peut pas afficher les vraies données dynamiques */ #>
+                    <div class="sesame-service-item">
+                        <div class="sesame-service-image">
+                            <img src="<?php echo plugins_url('assets/img/placeholder.jpg', dirname(__FILE__, 2)); ?>"
+                                alt="Service Traiteur">
                         </div>
-                    <?php endwhile; ?>
-                </div>
-            <?php endif;
-            wp_reset_postdata(); ?>
+                        <div class="sesame-service-content">
+                            <div class="sesame-service-categories">
+                                <span class="sesame-service-category">Catégorie exemple</span>
+                            </div>
+                            <h3 class="sesame-service-title">Titre du service</h3>
+                            <div class="sesame-service-description">Description du service traiteur.</div>
+                            <a href="#" class="sesame-service-link">En savoir plus</a>
+                        </div>
+                    </div>
+            </div>
 
-            <?php if (!empty($settings['cta_text']) && !empty($settings['cta_link']['url'])): ?>
+            <# if ( settings.cta_text && settings.cta_link.url ) { #>
                 <div class="sesame-traiteur-cta">
-                    <a href="<?php echo esc_url($settings['cta_link']['url']); ?>" <?php echo $settings['cta_link']['is_external'] ? 'target="_blank"' : ''; ?>             <?php echo $settings['cta_link']['nofollow'] ? 'rel="nofollow"' : ''; ?>>
-                        <?php echo esc_html($settings['cta_text']); ?>
+                    <a href="{{ settings.cta_link.url }}">
+                        {{{ settings.cta_text }}}
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14"></path>
@@ -434,7 +380,7 @@ class Sesame_Service_Traiteur_Widget extends \Elementor\Widget_Base
                         </svg>
                     </a>
                 </div>
-            <?php endif; ?>
+                <# } #>
         </div>
         <?php
     }

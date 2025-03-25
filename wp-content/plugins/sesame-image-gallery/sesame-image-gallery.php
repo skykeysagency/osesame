@@ -60,8 +60,8 @@ final class Sesame_Image_Gallery
         // Ajouter les catégories de widgets
         add_action('elementor/elements/categories_registered', [$this, 'add_elementor_widget_categories']);
 
-        // Enregistrer les widgets
-        add_action('elementor/widgets/widgets_registered', [$this, 'register_widgets']);
+        // Enregistrer les widgets - utiliser le hook correct pour les versions récentes d'Elementor
+        add_action('elementor/widgets/register', [$this, 'register_widgets']);
 
         // Enregistrer les styles
         add_action('wp_enqueue_scripts', [$this, 'register_styles']);
