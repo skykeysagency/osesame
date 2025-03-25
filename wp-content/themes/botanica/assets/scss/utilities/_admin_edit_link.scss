@@ -1,0 +1,30 @@
+.entry-footer {
+	.edit-link {
+		position: fixed;
+		left: 15px;
+		bottom: 75px;
+		z-index: 9999999;
+		a {
+			border-radius: 4px;
+			display: block;
+			width: 48px;
+			height: 48px;
+			color: #fff;
+			background-color: var(--rbb-scroll-top-background-color);
+			overflow: hidden;
+			text-indent: -9999px;
+			text-align: center;
+			vertical-align: center;
+			&::before {
+				float: left;
+				text-indent: 0;
+				font-family: rbb-font, serif !important;
+				content: "\ea6c";
+				font-size: 20px;
+				line-height: 50px;
+				text-align: center;
+				margin-left: 15px;
+			}
+		}
+	}
+}

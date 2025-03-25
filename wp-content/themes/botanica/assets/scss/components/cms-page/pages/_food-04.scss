@@ -1,0 +1,162 @@
+// .................homepage food-04 .................
+.food-04 {
+	.rbb-elementor-slider.single.layout-3 {
+		.slick-dots {
+			bottom: 0;
+			left: 50%;
+			li {
+				box-shadow: none !important;
+				button {
+					width: 12px;
+					height: 12px;
+					background-color: #ffffff80;
+				}
+				&.slick-active {
+					button {
+						background-color: var(--rbb-general-secondary-color);
+					}
+				}
+			}
+		}
+	}
+	.rbb_woo_products {
+		.slick-list .slick-slide .item .item-product .border {
+			border: 1px solid #e5e7eb !important;
+		}
+		&.layout-7 {
+			.product_price {
+				font-size: 1.125rem;
+			}
+		}
+	}
+	.banner-7 {
+		.grid {
+			align-items: flex-start;
+			> div:not(.banner-left) {
+				@media (min-width: 768px) {
+					padding-top: 100px;
+				}
+			}
+			.banner-left {
+				@media (max-width: 767px) {
+					padding-bottom: 50px;
+				}
+				> div {
+					max-width: 490px;
+					margin: 0 auto;
+				}
+			}
+			.desc {
+				color: var(--rbb-general-body-text-color);
+				.hotline,
+				.email {
+					padding-top: 10px;
+					align-items: center;
+					display: flex;
+					&:hover {
+						.icon-phone {
+							animation: phone 1.2s linear;
+						}
+					}
+					.icon-phone {
+						color: var(--rbb-general-primary-color);
+						font-size: 20px;
+						text-align: center;
+					}
+					.title_block {
+						padding-left: 20px;
+						> span {
+							color: var(--rbb-general-heading-color);
+							font-weight: var(--typography-heading-variant);
+						}
+					}
+				}
+			}
+			.custom-html .box-content {
+				color: var(--rbb-general-body-text-color);
+				p {
+					color: var(--rbb-general-body-text-color);
+					padding-top: 0;
+				}
+				.image-box {
+					margin-bottom: 14px;
+					h4 {
+						color: var(--rbb-general-heading-color);
+					}
+				}
+			}
+		}
+	}
+	.banner-group {
+		overflow: hidden;
+		.elementor-column-gap-default {
+			margin-left: -7.5px;
+			margin-right: -7.5px;
+		}
+	}
+	.gallerry {
+		.gallery-icon {
+			border-radius: 0;
+		}
+	}
+	form.wpcf7-form .newsletter-homepage {
+		.wpcf7-form-control-wrap input {
+			border: 2px solid var(--rbb-general-primary-color);
+			border-style: dashed;
+		}
+		.button {
+			border: 1px solid var(--rbb-general-primary-color);
+			background-color: var(--rbb-general-primary-color);
+		}
+	}
+	.group-testimonial > {
+		.elementor-background-overlay {
+			&::before {
+				content: "";
+				position: absolute;
+				background: #eaf8ef;
+				top: 50%;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: -2;
+			}
+		}
+		.elementor-container {
+			&::after,
+			&::before {
+				background: var(--rbb-general-primary-color);
+			}
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+	.food-04 {
+		.gallery {
+			display: flex;
+			overflow-x: auto;
+			.gallery-item {
+				min-width: 230px !important;
+			}
+		}
+	}
+}
+@media (max-width: 1023px) {
+	.food-04 {
+		.why-choose-us {
+			order: -1;
+		}
+		.rbb_woo_products.layout-6 .select-options li {
+			margin: 0 14px;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.food-04 {
+		.gallery {
+			.gallery-item {
+				width: 50%;
+			}
+		}
+	}
+}

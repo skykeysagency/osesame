@@ -1,0 +1,296 @@
+body {
+	&.vegetable-01 {
+		.slick-slider {
+			.slick-dots {
+				li {
+					button {
+						background: var(--rbb-general-secondary-color);
+					}
+					&.slick-active {
+						button {
+							background: var(--rbb-general-primary-color);
+						}
+					}
+				}
+			}
+		}
+		// ................Products Tab.................
+		.rbb_woo_products {
+			&.layout-7 {
+				.select-options {
+					li {
+						color: var(--rbb-general-heading-color);
+						&.active,
+						&:hover {
+							color: var(--rbb-general-primary-color);
+						}
+						&::before {
+							background: url(../images/elementor/widgets/products/icon-products2.png) center no-repeat;
+							background-size: cover;
+						}
+					}
+				}
+			}
+		}
+		.rbb-testimonial {
+			&.layout-6 {
+				.slick-arrow {
+					height: 50px;
+					width: 50px;
+				}
+			}
+		}
+		.rbb_posts {
+			&.layout-3 {
+				.blog_item {
+					.blog_readmore {
+						color: var(--rbb-general-link-color);
+						&:hover {
+							color: var(--rbb-general-link-hover-color);
+						}
+					}
+				}
+			}
+		}
+	}
+	&:not(.home) {
+		.category-mobile {
+			display: none;
+		}
+	}
+	// .......... Top Category ................
+	.top-category {
+		.icon-wave {
+			img {
+				max-width: 54px;
+			}
+		}
+		.elementor-image-box-wrapper {
+			.elementor-image-box-img {
+				min-width: 35px;
+				display: flex;
+				justify-content: center;
+				img {
+					max-width: 35px;
+				}
+			}
+			.elementor-image-box-title {
+				a {
+					transition: 0.3s;
+					&:hover {
+						color: var(--rbb-general-link-hover-color);
+					}
+				}
+			}
+			&:hover {
+				.elementor-image-box-img {
+					img {
+						animation: hexagon_icon 1s linear infinite;
+					}
+				}
+			}
+		}
+	}
+}
+// .................. policy ...............
+.policy-style2 {
+	overflow: hidden;
+	.elementor-image-box-wrapper {
+		&::before {
+			content: "";
+			width: 100%;
+			top: 73px;
+			left: 0;
+			position: absolute;
+			border: 2px dashed var(--rbb-general-secondary-color);
+			border-bottom: none;
+		}
+		&::after {
+			content: "";
+			width: 190px;
+			top: 73px;
+			left: 50%;
+			transform: translateX(-50%);
+			position: absolute;
+			border: 2px solid #fff;
+		}
+		.elementor-image-box-img {
+			min-width: 150px;
+			min-height: 150px;
+			line-height: 150px;
+			text-align: center;
+			box-shadow: 6px 10px 15px 0 rgba(0, 0, 0, 0.1);
+			border-radius: 100%;
+			position: relative;
+			background: #fff;
+			z-index: 2;
+			&::before {
+				content: "";
+				width: calc(100% + 40px);
+				position: absolute;
+				border: 2px dashed var(--rbb-general-secondary-color);
+				border-top-color: transparent;
+				border-right-color: transparent;
+				border-radius: 100%;
+				bottom: -20px;
+				left: -20px;
+				z-index: -1;
+				height: calc(100% + 40px);
+				transform: rotate(-45deg);
+			}
+			&::after {
+				content: "";
+				width: calc(100% - 40px);
+				height: calc(100% - 40px);
+				position: absolute;
+				background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%2384D814FF' stroke-width='2' stroke-dasharray='7' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+				border-radius: 100%;
+				bottom: 20px;
+				left: 20px;
+				z-index: -1;
+				opacity: 0;
+				-webkit-animation: rotated 10s infinite linear;
+				animation: rotated 10s infinite linear;
+				-webkit-transition: 500ms all ease;
+				transition: 500ms all ease;
+				-webkit-animation-play-state: running;
+				animation-play-state: running;
+			}
+			img {
+				display: inline-block;
+				max-width: 45px;
+			}
+		}
+		&:hover {
+			.elementor-image-box-img {
+				&::after {
+					opacity: 1;
+				}
+			}
+		}
+		.elementor-image-box-content {
+			.elementor-image-box-description {
+				max-width: 300px;
+				padding: 0 10px;
+				display: inline-block;
+			}
+		}
+	}
+	.policy-center {
+		.elementor-image-box-img {
+			&::before {
+				transform: rotate(135deg);
+			}
+		}
+	}
+}
+// ............... banner product................
+.product-sticky {
+	.sticky-banner {
+		position: sticky;
+		top: 100px;
+	}
+	.sticky-product {
+		position: sticky;
+		top: 100px;
+	}
+}
+.parallax_video {
+	clip: rect(0, auto, auto, 0);
+	overflow: hidden;
+	.elementor-background-video-container {
+		clip: rect(0, auto, auto, 0);
+		height: 100%;
+		left: 0;
+		overflow: hidden;
+		top: 0;
+		width: 100%;
+		//position: absolute!important;
+		video {
+			width: 100%;
+			max-width: 100%;
+			height: 120% !important;
+			object-fit: cover;
+			left: 0;
+			top: 0;
+			position: fixed !important;
+			transform: translate(0, 0);
+		}
+	}
+}
+@media (max-width: 1023px) {
+	body {
+		.canvas-overlay2 {
+			z-index: 10000;
+			background: var(--rbb-modal-background-color);
+			transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+			&.active {
+				opacity: var(--rbb-modal-background-opacity);
+				visibility: inherit;
+			}
+		}
+	}
+	.top-category {
+		position: fixed !important;
+		top: 0;
+		width: 320px !important;
+		height: 100vh;
+		background: #fff;
+		z-index: 99999;
+		right: -300px;
+		visibility: hidden;
+		-webkit-transition: all 0.3s linear;
+		-moz-transition: all 0.3s linear;
+		-ms-transition: all 0.3s linear;
+		-o-transition: all 0.3s linear;
+		transition: all 0.3s linear;
+		filter: alpha(opacity=0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		-ms-opacity: 0;
+		-o-opacity: 0;
+		opacity: 0;
+		overflow-x: auto;
+		padding: 40px 20px 30px 20px;
+		&.active {
+			right: 0;
+			filter: alpha(opacity=100);
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+			-webkit-opacity: 1;
+			-moz-opacity: 1;
+			-ms-opacity: 1;
+			-o-opacity: 1;
+			opacity: 1;
+			visibility: visible;
+		}
+		.elementor-element-populated {
+			background: transparent !important;
+			.elementor-background-overlay {
+				background: transparent !important;
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.top-category {
+		width: 80% !important;
+		.elementor-image-box-wrapper {
+			display: flex;
+			text-align: left !important;
+			align-items: center;
+			.elementor-image-box-img {
+				margin-right: 15px !important;
+			}
+		}
+	}
+}
+@media (max-width: 325px) {
+	.top-category {
+		width: 280px !important;
+		right: -280px;
+		&.active {
+			right: 0;
+		}
+	}
+}

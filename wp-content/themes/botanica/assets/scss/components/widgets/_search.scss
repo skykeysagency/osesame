@@ -1,0 +1,49 @@
+/* Search
+--------------------------------------------- */
+.wp-block-search {
+	.wp-block-search__inside-wrapper {
+		position: relative;
+
+		.wp-block-search__input {
+			height: 50px;
+			width: 100%;
+			border-radius: 50px;
+			padding: 10px 50px 10px 20px;
+			box-shadow: none;
+			border: 1px solid var(--rbb-general-secondary-color);
+			&::placeholder {
+				color: #a0a0a0 !important;
+				font-size: 12px !important;
+				line-height: 48px !important;
+			}
+		}
+
+		.wp-block-search__button {
+			position: absolute;
+			top: 6px;
+			right: 6px;
+			background: var(--rbb-general-primary-color);
+			height: 38px;
+			width: 38px;
+			border-radius: 100%;
+			font-size: 0;
+			color: #fff;
+			transition: 0.3s;
+
+			&::before {
+				content: "";
+				width: 14px;
+				height: 14px;
+				position: absolute;
+				top: 13px;
+				right: 12px;
+				background: url(../images/blog/search.svg) center no-repeat;
+			}
+
+			&:hover {
+				transition: 0.3s;
+				background: var(--rbb-general-secondary-color);
+			}
+		}
+	}
+}

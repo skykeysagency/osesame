@@ -1,0 +1,56 @@
+// .................homepage Food 02.................
+.our-menu {
+	.rbb-elementor-slider {
+		&.multiple {
+			&.default {
+				.main-title {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+// ..........banner delivery .....
+.banner-delivery {
+	.banner-icon-border {
+		.elementor-image-box-wrapper {
+			display: flex;
+			.elementor-image-box-img {
+				position: relative;
+				min-width: 94px;
+				&::before {
+					content: "";
+					height: 44px;
+					width: 1px;
+					position: absolute;
+					top: 0;
+					right: 20px;
+					background: #e3e3e3;
+				}
+			}
+		}
+	}
+	@media (max-width: 1024px) {
+		.img-banner {
+			order: -1;
+		}
+	}
+}
+.policy {
+	.elementor-image-box-wrapper {
+		&:hover {
+			.elementor-image-box-img {
+				img {
+					animation: hexagon_icon 1s linear infinite;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.food-01 {
+		.product_price {
+			font-size: 13px;
+		}
+	}
+}

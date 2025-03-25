@@ -1,0 +1,165 @@
+// .................homepage Food 03.................
+// ..........banner delivery .....
+.banner-delivery {
+	.banner-icon-border {
+		.elementor-image-box-wrapper {
+			display: flex;
+			.elementor-image-box-img {
+				position: relative;
+				min-width: 94px;
+				&::before {
+					content: "";
+					height: 44px;
+					width: 1px;
+					position: absolute;
+					top: 0;
+					right: 20px;
+					background: #e3e3e3;
+				}
+			}
+		}
+	}
+	@media (max-width: 1024px) {
+		.img-banner {
+			order: -1;
+		}
+	}
+}
+body {
+	.group-testimonial {
+		> .elementor-container {
+			position: relative;
+			background: #fff;
+			border-radius: 8px;
+			border: 1px solid #e5e5e5;
+			box-shadow: 10px 11px 20px 0 rgba(0, 0, 0, 0.15);
+			@media (min-width: 768px) {
+				&::before {
+					content: "";
+					z-index: -1;
+					height: 100%;
+					position: absolute;
+					border-radius: 8px;
+					transition: all 400ms ease;
+					opacity: 0.5;
+					background: var(--rbb-general-secondary-color);
+					left: 10px;
+					right: 10px;
+					bottom: -10px;
+				}
+				&::after {
+					content: "";
+					z-index: -2;
+					height: 100%;
+					position: absolute;
+					border-radius: 8px;
+					transition: all 400ms ease;
+					opacity: 0.5;
+					background: var(--rbb-general-secondary-color);
+					left: 20px;
+					right: 20px;
+					bottom: -20px;
+				}
+				.number-left {
+					> .elementor-widget-wrap {
+						position: relative;
+						&::before {
+							content: "";
+							width: 35px;
+							height: 35px;
+							position: absolute;
+							top: 45%;
+							left: -44px;
+							border-bottom: 1px solid #e5e5e5;
+							border-right: 1px solid #e5e5e5;
+							background: #fff;
+							z-index: 2;
+							transform: rotate(135deg) translate(-50%, -50%);
+						}
+						&::after {
+							content: "";
+							width: 1px;
+							height: 97%;
+							position: absolute;
+							top: 2px;
+							left: -2px;
+							z-index: 1;
+							background: #e5e5e5;
+						}
+
+					}
+				}
+			}
+		}
+	}
+	&.food-03 {
+		.rbb-elementor-slider {
+			&.single {
+				&.default {
+					.button-group {
+						.button-icon {
+							i {
+								color: #fff;
+							}
+						}
+					}
+					.slick-dots {
+						li {
+							box-shadow: none;
+							button {
+								width: 12px;
+								height: 12px;
+								background-color: #ffffff80;
+							}
+							&.slick-active {
+								button {
+									background-color: var(--rbb-general-secondary-color);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.rbb_woo_products {
+			&.layout-2 {
+				.swiper-scrollbar {
+					background: #fff;
+				}
+			}
+			&.layout-8 {
+				.rbb-slick-carousel {
+					padding-bottom: 64px;
+					.slick-dots {
+						bottom: 0;
+					}
+				}
+			}
+		}
+		.banner-group {
+			overflow: hidden;
+			.elementor-column-gap-default {
+				margin-left: -7.5px;
+				margin-right: -7.5px;
+			}
+		}
+		.policy {
+			.elementor-image-box-wrapper {
+				&:hover {
+					.elementor-image-box-img {
+						img {
+							animation: hexagon_icon 1s linear infinite;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.food-03 {
+		.product_price {
+			font-size: 13px;
+		}
+	}
+}

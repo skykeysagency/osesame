@@ -1,0 +1,58 @@
+// .............contact-us ...............
+.woocommerce-form-track-order {
+	padding: 75px 110px 50px;
+	background: #f1f1f1;
+	border-radius: 8px;
+	p {
+		&:first-child {
+			display: none;
+		}
+		&.form-row {
+			margin-bottom: 30px;
+			&.form-row-first {
+				margin-bottom: 24px;
+			}
+			label {
+				display: block;
+				font-weight: 600;
+				margin-bottom: 3px;
+				color: var(--rbb-general-link-color);
+			}
+			input {
+				width: 100%;
+				height: 50px;
+				border-radius: 4px;
+				border: solid 1px #dfdfdf;
+				transition: 0.3s;
+				&::placeholder {
+					font-size: 0.75rem;
+					color: #b7b7b7;
+					text-align: center;
+				}
+				&:focus,
+				&:hover {
+					outline: none;
+					box-shadow: none;
+					border: solid 1px var(--rbb-general-primary-color);
+				}
+			}
+			.button {
+				width: 100%;
+				height: 50px;
+				border-radius: 4px;
+				transition: 0.3s;
+				font-size: 12px;
+				color: #fff;
+				background: var(--rbb-general-primary-color);
+				&:hover {
+					background: var(--rbb-general-secondary-color);
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.woocommerce-form-track-order {
+		padding: 75px 50px 50px;
+	}
+}

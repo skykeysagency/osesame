@@ -1,0 +1,127 @@
+/**
+ * Tabs
+ */
+ .woocommerce-tabs {
+ 	ul.tabs {
+ 		list-style: none;
+ 		text-align: left;
+
+ 		li {
+ 			&:first-child {
+ 				padding-left: 0px;
+ 			}
+
+ 			a {
+ 				transition: 0.3s;
+
+ 				&:before {
+ 					content: "";
+ 					left: -10px;
+ 					right: -10px;
+ 					height: 15px;
+ 					background: var(--rbb-general-secondary-color);
+ 					opacity: 0.2;
+ 					position: absolute;
+ 					bottom: 0;
+ 					z-index: -1;
+ 					opacity: 0;
+ 					transition: 0.3s;
+ 				}
+ 			}
+
+ 			&:hover,
+ 			&.active {
+ 				a {
+ 					transition: 0.3s;
+ 					color: var(--rbb-general-primary-color);
+
+ 					&:before {
+ 						opacity: 0.2;
+ 					}
+ 				}
+ 			}
+ 		}
+ 	}
+
+ 	.panel {
+ 		h2:first-of-type {
+ 			margin-bottom: 1em;
+ 		}
+ 	}
+
+ 	.woocommerce-tabs-panel {
+ 		h2 {
+ 			display: none;
+ 		}
+ 	}
+ }
+
+ .description-bottom {
+ 	padding-top: 40px;
+ 	&:after {
+ 		content: "";
+ 		clear: both;
+ 		display: table;
+ 	}
+ 	h3 {
+ 		font-size: 18px;
+ 		line-height: 1;
+ 	}
+ 	ul {
+ 		padding-top: 30px;
+
+ 		li {
+ 			padding-left: 19px;
+ 			position: relative;
+ 			margin-bottom: 12px;
+
+ 			&:before {
+ 				content: "";
+ 				width: 8px;
+ 				height: 8px;
+ 				border: 1px solid #bdbdbd;
+ 				border-radius: 100%;
+ 				position: absolute;
+ 				left: 0px;
+ 				top: 50%;
+ 				-moz-transform: translateY(-50%);
+ 				-webkit-transform: translateY(-50%);
+ 				-o-transform: translateY(-50%);
+ 				-ms-transform: translateY(-50%);
+ 				transform: translateY(-50%);
+ 			}
+ 		}
+ 	}
+ 	.description-right {
+ 		padding-left: 45px;
+ 		ul {
+ 			padding-top: 30px;
+ 		}
+ 	}
+ 	@media (max-width: 767px) {
+ 		> div {
+ 			width: 100% !important;
+ 			&.description-right {
+ 				padding-left: 0px;
+ 				padding-top: 30px;
+ 			}
+ 		}
+ 	}
+ }
+ .woocommerce-tabs-panel,
+ .product-single__tabs {
+ 	.woocommerce-product-attributes {
+ 		width: 100%;
+ 		tr {
+ 			&:nth-child(odd) {
+ 				background-color: #f2f2f2;
+ 			}
+ 			th,
+ 			td {
+ 				padding: 10px;
+ 				height: 50px;
+ 				text-transform: capitalize;
+ 			}
+ 		}
+ 	}
+ }

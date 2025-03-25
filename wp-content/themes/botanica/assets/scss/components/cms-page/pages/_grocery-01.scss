@@ -1,0 +1,220 @@
+// .................homepage Grocery 01.................
+body {
+	&.grocery-01 {
+		.rbb-elementor-slider {
+			&.single {
+				&.layout-4 {
+					&::before {
+						display: none;
+					}
+					#slideshow-dot {
+						bottom: 20px;
+						> div {
+							&::before {
+								background-color: rgba(#fff, 0.5);
+							}
+							&.active {
+								&::before {
+									background-color: var(--rbb-general-secondary-color);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.banner-content {
+			.content {
+				&::before {
+					background: var(--rbb-general-primary-color);
+				}
+				.circle {
+					background: var(--rbb-general-secondary-color);
+					border-top: var(--rbb-general-secondary-color);
+					border-bottom: var(--rbb-general-secondary-color);
+				}
+				&:first-child {
+					.circle {
+						border-left: none;
+					}
+				}
+				&:last-child {
+					.circle {
+						border-right: none;
+					}
+				}
+			}
+		}
+		.group-testimonial {
+			> .elementor-container {
+				position: relative;
+				background: #fff;
+				border-radius: 8px;
+				border: 1px solid #e5e5e5;
+				box-shadow: 10px 11px 20px 0 rgba(0, 0, 0, 0.15);
+				@media (min-width: 768px) {
+					&::before {
+						content: "";
+						width: 100%;
+						z-index: -1;
+						height: 100%;
+						position: absolute;
+						border-radius: 8px;
+						transition: all 400ms ease;
+						background-color: var(--rbb-general-secondary-color);
+						left: 0;
+						bottom: 0;
+						transform: rotate(1.9deg);
+					}
+					.number-left {
+						> .elementor-widget-wrap {
+							position: relative;
+							&::before {
+								content: "";
+								width: 35px;
+								height: 35px;
+								position: absolute;
+								top: 45%;
+								right: -44px;
+								border-bottom: 1px solid #e5e5e5;
+								border-right: 1px solid #e5e5e5;
+								background: #fff;
+								z-index: 2;
+								transform: rotate(-45deg) translate(-50%, -50%);
+							}
+							&::after {
+								content: "";
+								width: 1px;
+								height: 97%;
+								position: absolute;
+								top: 2px;
+								right: -2px;
+								z-index: 1;
+								background: #e5e5e5;
+							}
+
+						}
+					}
+				}
+			}
+		}
+		.rbb_woo_products {
+			&.layout-11 {
+				.slick-slider {
+					.slick-dots {
+						bottom: -40px;
+						li {
+							button {
+								background: rgba(#fff, 0.3);
+							}
+							&.slick-active {
+								box-shadow: 0 0 0 1px var(--rbb-general-secondary-color);
+								button {
+									background: var(--rbb-general-secondary-color);
+								}
+							}
+						}
+					}
+				}
+			}
+			&.layout-9 {
+				.slick-slider {
+					.slick-dots {
+						li {
+							button {
+								background: var(--rbb-general-secondary-color);
+							}
+							&.slick-active {
+								button {
+									background: var(--rbb-general-primary-color);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.newsletter-homepage {
+			input {
+				&.wpcf7-email {
+					border: none !important;
+					margin-bottom: 0;
+					padding: 0 150px 0 30px;
+				}
+				&.button {
+					background: var(--rbb-general-secondary-color);
+					border: 1px solid var(--rbb-general-secondary-color);
+					&:hover {
+						background: var(--rbb-general-primary-color);
+						border: 1px solid var(--rbb-general-primary-color);
+					}
+				}
+			}
+		}
+	}
+}
+html {
+	&:not(.elementor-html) {
+		body {
+			&.grocery-01 {
+				.canvas-overlay2 {
+					z-index: 10000;
+					background: var(--rbb-modal-background-color);
+					transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+					&.active {
+						opacity: var(--rbb-modal-background-opacity);
+						visibility: inherit;
+					}
+				}
+				.top-category {
+					position: fixed !important;
+					top: 0;
+					width: 320px !important;
+					height: 100vh;
+					background: #fff;
+					z-index: 99999;
+					left: -300px;
+					visibility: hidden;
+					-webkit-transition: all 0.3s linear;
+					-moz-transition: all 0.3s linear;
+					-ms-transition: all 0.3s linear;
+					-o-transition: all 0.3s linear;
+					transition: all 0.3s linear;
+					filter: alpha(opacity=0);
+					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+					-webkit-opacity: 0;
+					-moz-opacity: 0;
+					-ms-opacity: 0;
+					-o-opacity: 0;
+					opacity: 0;
+					overflow-x: auto;
+					padding: 20px 20px 30px 20px;
+					&.active {
+						left: 0;
+						filter: alpha(opacity=100);
+						-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+						-webkit-opacity: 1;
+						-moz-opacity: 1;
+						-ms-opacity: 1;
+						-o-opacity: 1;
+						opacity: 1;
+						visibility: visible;
+					}
+					.elementor-element-populated {
+						background: transparent !important;
+						.elementor-background-overlay {
+							background: transparent !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1199px) {
+	.group-policy {
+		.elementor-container {
+			flex-wrap: wrap;
+		}
+	}
+}

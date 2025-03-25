@@ -1,0 +1,14 @@
+// .............Store-Locations ...............
+.border-image {
+	.elementor-widget-container {
+		overflow: hidden;
+	}
+}
+@media (max-width: 767px) {
+	.order-1 {
+		order: 1 !important;
+	}
+	.order-2 {
+		order: 2 !important;
+	}
+}

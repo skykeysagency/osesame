@@ -1,0 +1,40 @@
+/* WordPress Core - Envato Theme Check.
+-------------------------------------------------------------- */
+.alignnone {
+	margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin: 5px auto 5px auto;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.wp-caption {
+	border: 0;
+	max-width: 96%; /* Image does not overflow the content area */
+	text-align: center;
+}
+
+.wp-caption p.wp-caption-text {
+	margin: 0;
+	padding: 0;
+}
+
+.bypostauthor {
+	border: none;
+	height: auto;
+}
+
+.gallery-caption {
+	border: none;
+	height: auto;
+}

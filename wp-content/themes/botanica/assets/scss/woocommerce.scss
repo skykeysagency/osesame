@@ -1,0 +1,73 @@
+/*
+Theme Name: rising_bamboo
+
+WooCommerce styles override
+
+*/
+
+// WooCommerce color variables
+$woocommerce__error: #e2401c;
+$woocommerce__error-background: #ffdede;
+$woocommerce__error-border: #f7c9c9;
+$woocommerce__success: #0f834d;
+$woocommerce__success-background: #eaf4ec;
+$woocommerce__success-border: #bbeac3;
+$woocommerce__info: #3d9cd2;
+$woocommerce__info-background: #5c93b4;
+$woocommerce__info-border: #7595ad;
+
+$woocommerce__placeholder-color: #b7b7b7;
+$woocommerce__button-background-color-01: #222;
+$woocommerce__background-color-01: #f2f2f2;
+$woocommerce__border-color-01: #dfdfdf;
+$woocommerce__border-input-color-01: #ececec;
+$woocommerce__border-input-color-02: #eaeaea;
+$woocommerce-price-color: #d6d6d6;
+/**
+ * Shop tables
+ */
+@import "plugins/woocommerce/tables";
+
+/**
+ * Products
+ */
+@import "plugins/woocommerce/products";
+/**
+ * Category product
+ */
+@import "plugins/woocommerce/category-product";
+
+/**
+ * Single product
+ */
+@import "plugins/woocommerce/single-product";
+
+/**
+ * Checkout
+ */
+@import "plugins/woocommerce/checkout";
+
+/**
+ * General WooCommerce components
+ */
+@import "plugins/woocommerce/components";
+
+/**
+ * WooCommerce widgets
+ */
+@import "plugins/woocommerce/widgets";
+
+/**
+ * WooCommerce account
+ */
+@import "plugins/woocommerce/account";
+
+/**
+ * WooCommerce Cart
+ */
+@import "plugins/woocommerce/cart";
+
+/**
+ * WooCommerce Order Received
+ */
+@import "plugins/woocommerce/thank-you";

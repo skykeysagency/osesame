@@ -1,0 +1,72 @@
+// ............... page faqs .................
+.rbb-image-box {
+	.elementor-widget-container {
+		transition-duration: 0.3s;
+		img {
+			display: inline-block;
+		}
+		&:hover {
+			img {
+				animation-name: elementor-animation-wobble-horizontal;
+				animation-duration: 1s;
+				animation-timing-function: ease-in-out;
+				animation-iteration-count: 1;
+			}
+		}
+		.elementor-image-box-title {
+			a {
+				&:hover {
+					color: var(--rbb-general-primary-color);
+				}
+			}
+		}
+	}
+}
+.rbb-toggle {
+	.elementor-accordion-item {
+		border: none !important;
+		border-bottom: 1px solid #dedede !important;
+		&:first-child {
+			.elementor-tab-title {
+				border-top: 1px solid #dedede !important;
+			}
+		}
+		.elementor-accordion-icon-right {
+			padding-top: 6px;
+		}
+		.elementor-tab-title {
+			position: relative;
+			.elementor-toggle-icon {
+				font-size: 12px;
+			}
+			&:hover {
+				.elementor-accordion-title {
+					color: var(--rbb-general-primary-color);
+				}
+			}
+			&::before {
+				content: "";
+				width: 0%;
+				max-width: 200px;
+				height: 2px;
+				background: var(--rbb-general-primary-color);
+				position: absolute;
+				top: -1px;
+				left: 0;
+				transition: 0.5s;
+			}
+			&.elementor-active {
+				&::before {
+					width: 100%;
+					transition: 0.5s;
+				}
+				.elementor-accordion-title {
+					color: var(--rbb-general-primary-color);
+				}
+				.elementor-accordion-icon-right {
+					color: var(--rbb-general-primary-color);
+				}
+			}
+		}
+	}
+}

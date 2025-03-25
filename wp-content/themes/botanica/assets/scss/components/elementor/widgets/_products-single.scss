@@ -1,0 +1,129 @@
+.rbb_woo_single_product {
+	&.default {
+		@media (min-width: 1200px) {
+			.product-image {
+				.product-single__sticky {
+					display: flex;
+				}
+				.rbb-single-product-thumbs-content {
+					position: absolute;
+					top: -3px;
+					left: 0;
+					width: 170px;
+					padding-top: 0;
+					margin: -8px 15px -8px 0;
+					.rbb-single-product-thumbs {
+						position: relative;
+						&::before {
+							content: "";
+							position: absolute;
+							z-index: 2;
+							left: 0;
+							bottom: 30px;
+							width: 100%;
+							height: 100px;
+							background: linear-gradient(to bottom, transparent 0%, #fff 100%);
+						}
+						.slick-slide {
+							.item {
+								.thumbnail {
+									cursor: pointer;
+									transition: 0.3s;
+									border: 1px solid var(--rbb-general-button-bg-color);
+									&:hover {
+										border: 1px solid var(--rbb-general-secondary-color);
+									}
+								}
+							}
+							&.slick-current {
+								.item {
+									.thumbnail {
+										border: 1px solid var(--rbb-general-secondary-color);
+									}
+								}
+							}
+						}
+					}
+				}
+				#rbb-gallery-lightbox {
+					margin-left: 183px;
+					.rbb-single-product-slick {
+						.slick-slide {
+							> div {
+								display: flex;
+							}
+						}
+						.slick-prev {
+							left: 10px;
+						}
+						.slick-next {
+							right: 10px;
+						}
+					}
+				}
+			}
+			.product-summary {
+				padding-left: 100px;
+				padding-right: 80px;
+			}
+		}
+		.product-image {
+			.rbb-single-product-thumbs-content {
+				.rbb-single-product-thumbs {
+					.slick-slide {
+						.item {
+							.thumbnail {
+								cursor: pointer;
+								transition: 0.3s;
+								border: 1px solid var(--rbb-general-button-bg-color);
+								&:hover {
+									border: 1px solid var(--rbb-general-secondary-color);
+								}
+							}
+						}
+						&.slick-current {
+							.item {
+								.thumbnail {
+									border: 1px solid var(--rbb-general-secondary-color);
+								}
+							}
+						}
+					}
+				}
+			}
+			#rbb-gallery-lightbox {
+				.rbb-single-product-slick {
+					.slick-slide {
+						> div {
+							display: flex;
+						}
+					}
+					.slick-prev {
+						left: 10px;
+					}
+					.slick-next {
+						right: 10px;
+					}
+				}
+			}
+		}
+		.single-sticky {
+			.price {
+				font-size: 18px;
+			}
+			.woosc-btn-icon-text,
+			.ask-questions,
+			.rbb-social {
+				margin-bottom: 17px;
+			}
+			.shipping-delivery-estimate-time {
+				padding-top: 25px;
+				border-top: 1px solid var(--rbb-general-button-bg-color);
+			}
+			.product_meta {
+				border-top: none;
+				padding: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+a {
+	color: var(--rbb-general-link-color);
+	&:visited {
+		color: var(--rbb-general-link-color);
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--rbb-general-link-hover-color);
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+	&.elementor-social-icon {
+		display: flex;
+	}
+}

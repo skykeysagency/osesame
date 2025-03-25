@@ -1,0 +1,369 @@
+body {
+	&.modal-open {
+		overflow: hidden;
+	}
+}
+.rbb-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	cursor: pointer;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.35s ease-in;
+	z-index: 99999;
+	.rbb-modal-backdrop {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	&.outside-modal {
+		.rbb-modal-backdrop {
+			pointer-events: none;
+		}
+	}
+	&.show {
+		visibility: visible;
+		opacity: 1;
+		.rbb-modal-backdrop {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	&.backdrop {
+		.rbb-modal-backdrop {
+			background: rgba(#fff, 1%);
+			backdrop-filter: blur(var(--rbb-modal-backdrop-filter-size));
+		}
+	}
+	&.backdrop-none {
+		.rbb-modal-backdrop {
+			background: var(--rbb-modal-background-color);
+			opacity: var(--rbb-modal-background-opacity);
+		}
+	}
+	.rbb-modal-dialog {
+		position: relative;
+		max-width: 800px;
+		max-height: 80vh;
+		cursor: default;
+		.rbb-modal-header {
+			position: relative;
+			.rbb-close-modal {
+				position: absolute;
+				right: -50px;
+				top: -35px;
+				width: 48px;
+				height: 48px;
+				background: transparent;
+				color: #fff;
+				padding: 5px;
+				border-radius: 50%;
+				transition: all 0.3s;
+				font-size: 16px;
+				letter-spacing: 0;
+				font-weight: 400;
+				&:hover {
+					transition: all 0.3s;
+					outline: none;
+					background: rgba(255, 255, 255, 0.15);
+				}
+			}
+		}
+	}
+	/* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+	&[data-modal-animation] {
+		.rbb-modal-dialog {
+			opacity: 0;
+			transition: transform 0.5s, opacity 0.5s;
+			animation-duration: 0.5s;
+			-webkit-animation-duration: 0.5s;
+		}
+	}
+	&[data-modal-animation].show {
+		.rbb-modal-dialog {
+			opacity: 1;
+		}
+	}
+	&[data-modal-animation="slideInOutDown"] {
+		.rbb-modal-dialog {
+			-webkit-animation-name: animateBottom;
+			animation-name: animateBottom;
+			transform: translateY(100%);
+		}
+	}
+	&[data-modal-animation="slideInOutTop"] {
+		.rbb-modal-dialog {
+			-webkit-animation-name: animateTop;
+			animation-name: animateTop;
+			transform: translateY(-100%);
+		}
+	}
+	&[data-modal-animation="slideInOutLeft"] {
+		.rbb-modal-dialog {
+			-webkit-animation-name: animateLeft;
+			animation-name: animateLeft;
+			transform: translateX(-100%);
+		}
+	}
+	&[data-modal-animation="slideInOutRight"] {
+		.rbb-modal-dialog {
+			-webkit-animation-name: animateRight;
+			animation-name: animateRight;
+			transform: translateX(100%);
+		}
+	}
+	&[data-modal-animation="zoomInOut"] {
+		.rbb-modal-dialog {
+			-webkit-animation-name: zoomInOut;
+			animation-name: zoomInOut;
+			transform: scale(0.2);
+		}
+	}
+	&[data-modal-animation="rotateInOutDown"] {
+		.rbb-modal-dialog {
+			-webkit-animation-name: rotateInOutDown;
+			animation-name: rotateInOutDown;
+			transform-origin: top left;
+			transform: rotate(-1turn);
+		}
+	}
+	&[data-modal-animation="mixInAnimations"].show {
+		.rbb-modal-dialog {
+			animation: mixInAnimations 2s 0.5s linear forwards;
+			opacity: 0;
+		}
+	}
+	&[data-modal-animation="slideInOutDown"].show {
+		.rbb-modal-dialog {
+			transform: none;
+		}
+	}
+	&[data-modal-animation="slideInOutTop"].show {
+		.rbb-modal-dialog {
+			transform: translateY(0%);
+		}
+	}
+	&[data-modal-animation="slideInOutLeft"].show {
+		.rbb-modal-dialog {
+			transform: none;
+		}
+	}
+	&[data-modal-animation="slideInOutRight"].show {
+		.rbb-modal-dialog {
+			transform: none;
+		}
+	}
+	&[data-modal-animation="zoomInOut"].show {
+		.rbb-modal-dialog {
+			transform: scale(1);
+		}
+	}
+	&[data-modal-animation="rotateInOutDown"].show {
+		.rbb-modal-dialog {
+			transform: none;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.rbb-modal {
+		.rbb-modal-dialog {
+			.rbb-modal-header {
+				.rbb-close-modal {
+					top: -48px;
+					right: 50%;
+					transform: translateX(50%);
+					-moz-transform: translateX(50%);
+					-webkit-transform: translateX(50%);
+					-o-transform: translateX(50%);
+					-ms-transform: translateX(50%);
+				}
+			}
+		}
+	}
+}
+@keyframes mixInAnimations {
+	0% {
+		transform: rotate(25deg);
+		opacity: 0;
+	}
+
+	10% {
+		transform: rotate(-25deg);
+		opacity: 1;
+	}
+
+	20% {
+		transform: rotate(20deg);
+	}
+
+	30% {
+		transform: rotate(-20deg);
+	}
+
+	40% {
+		transform: rotate(15deg);
+	}
+
+	50% {
+		transform: rotate(-15deg);
+	}
+
+	60% {
+		transform: rotate(10deg);
+	}
+
+	70% {
+		transform: rotate(-10deg);
+	}
+
+	80% {
+		transform: rotate(5deg);
+	}
+
+	90% {
+		transform: rotate(-5deg);
+	}
+
+	100% {
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+}
+@-webkit-keyframes animateTop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animateTop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes animateRight {
+	from {
+		right: -370px;
+		opacity: 0;
+	}
+	to {
+		right: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animateRight {
+	from {
+		right: -370px;
+		opacity: 0;
+	}
+	to {
+		right: 0;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes animateLeft {
+	from {
+		left: -370px;
+		opacity: 0;
+	}
+	to {
+		left: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animateLeft {
+	from {
+		left: -370px;
+		opacity: 0;
+	}
+	to {
+		left: 0;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes animateBottom {
+	from {
+		bottom: -300px;
+		opacity: 0;
+	}
+	to {
+		bottom: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animateBottom {
+	from {
+		bottom: -300px;
+		opacity: 0;
+	}
+	to {
+		bottom: 0;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes zoomInOut {
+	from {
+		transform: scale(0.2);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes zoomInOut {
+	from {
+		transform: scale(0.2);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+@-webkit-keyframes rotateInOutDown {
+	from {
+		transform-origin: top left;
+		transform: rotate(-1turn);
+		opacity: 0;
+	}
+	to {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+@keyframes rotateInOutDown {
+	from {
+		transform-origin: top left;
+		transform: rotate(-1turn);
+		opacity: 0;
+	}
+	to {
+		transform: none;
+		opacity: 1;
+	}
+}

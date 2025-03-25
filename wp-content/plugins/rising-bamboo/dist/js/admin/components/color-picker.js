@@ -1,0 +1,1 @@
+!function(c){"use strict";c(document).ready((function(){c(".rbb-swatches").wpColorPicker()}))}(jQuery);

@@ -1,0 +1,25 @@
+.rbb-breadcrumb {
+	color: var(--rbb-breadcrumb-color);
+	a {
+		color: var(--rbb-breadcrumb-color);
+		&:hover {
+			color: var(--rbb-general-link-hover-color);
+		}
+	}
+	.delimiter {
+		font-size: 7px;
+		font-weight: 700;
+		position: relative;
+		&.icon-svg {
+			&::before {
+				content: "";
+				width: 8px;
+				height: 8px;
+				top: 0;
+				left: 3px;
+				position: absolute;
+				background: url("../images/chevron-right.svg");
+			}
+		}
+	}
+}

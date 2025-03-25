@@ -1,0 +1,66 @@
+
+---Downloaded files---
+The import files for: Food 02 were successfully downloaded!
+Initial max execution time = 360
+Files info:
+Site URL = https://o-sesame.fr
+Data file = /home/u570625223/domains/o-sesame.fr/public_html/wp-content/uploads/2025/02/demo-content-import-file_2025-02-26__16-04-28.xml
+Widget file = /home/u570625223/domains/o-sesame.fr/public_html/wp-content/uploads/2025/02/demo-widgets-import-file_2025-02-26__16-04-28.json
+Customizer file = /home/u570625223/domains/o-sesame.fr/public_html/wp-content/uploads/2025/02/demo-customizer-import-file_2025-02-26__16-04-28.dat
+Redux files:
+not defined!
+
+---ocdi/before_content_import---
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+---ocdi/before_widgets_import---
+
+
+---Importing widgets---
+Sidebar Blog Top : 
+
+Bloc - No Title - Imported
+Bloc - No Title - Imported
+
+Sidebar Blog : 
+
+Bloc - No Title - Imported
+Bloc - No Title - Imported
+Bloc - No Title - Imported
+
+Sidebar Shop Filter : 
+
+[Rbb] Filter Products By Category - Categories - Imported
+[Rbb] Filter Products By Price - Price - Imported
+[Rbb] Filter Products By Brands - Brands - Imported
+[Rbb] Filter By Attributes - Size - Imported
+[Rbb] Filter Products By Rating - Ratings - Imported
+[Rbb] Filter By Attributes - Colors - Imported
+
+Product Category Bottom : 
+
+[Rbb] Products Tags - All Tags : - Imported
+
+
+
+---Importing customizer settings---
+Customizer settings import finished!
+
+---ocdi/after_import---
+

@@ -1,0 +1,71 @@
+.rbb-price-filter {
+	input[type="number"] {
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+		}
+
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+		}
+	}
+
+	.rbb-price-filter__range-input {
+		span {
+			color: #909090;
+			&.border-top {
+				&::before {
+					content: "";
+					width: 1px;
+					height: 17px;
+					background: #ababab;
+					left: 50%;
+					top: -27px;
+					z-index: -1;
+					position: absolute;
+				}
+			}
+		}
+
+		input[type="range"] {
+			&::-webkit-slider-thumb {
+				height: 19px;
+				width: 19px;
+				border-radius: 50%;
+				background: #fff;
+				border: 4px solid #fff;
+				pointer-events: auto;
+				cursor: pointer;
+				transition: 0.3s;
+				z-index: 9;
+				-webkit-appearance: none;
+				box-shadow: 0 0 var(--rbb-general-primary-color);
+				box-shadow: 0 0 0 1px var(--rbb-general-primary-color);
+			}
+
+			&::-moz-range-thumb {
+				height: 19px;
+				width: 19px;
+				border: none;
+				border-radius: 50%;
+				background: #fff;
+				cursor: pointer;
+				pointer-events: auto;
+				-moz-appearance: none;
+				box-shadow: 0 0 var(--rbb-general-primary-color);
+				box-shadow: 0 0 0 1px var(--rbb-general-primary-color);
+			}
+			&:hover {
+				&::-webkit-slider-thumb {
+					background: var(--rbb-general-primary-color);
+				}
+			}
+		}
+	}
+	.rbb-price-filter__input {
+		input {
+			&:focus {
+				box-shadow: none;
+			}
+		}
+	}
+}

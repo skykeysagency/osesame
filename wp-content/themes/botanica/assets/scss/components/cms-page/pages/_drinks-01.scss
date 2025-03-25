@@ -1,0 +1,202 @@
+// .................homepage Drinks-01.................
+body {
+	.gallerry {
+		.gallery-icon,
+		.wp-caption {
+			border-radius: 10px;
+			max-width: 100%;
+			overflow: hidden;
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.3);
+				visibility: hidden;
+				opacity: 0;
+				transition: all 0.3s linear;
+				z-index: 9;
+			}
+			a {
+				&::before {
+					content: "\ea3c";
+					font-family: rbb-font, serif;
+					color: #fff;
+					top: 50%;
+					left: 50%;
+					position: absolute;
+					font-size: 40px;
+					z-index: 10;
+					opacity: 0;
+					transform: translate(-50%, -50%);
+					transition: all 0.2s linear;
+				}
+				img {
+					transition: all 0.3s linear;
+				}
+			}
+			&:hover {
+				&::before {
+					visibility: initial;
+					opacity: 1;
+				}
+				a {
+					&::before {
+						opacity: 1;
+					}
+					img {
+						transform: scale(1.08, 1.08);
+					}
+				}
+			}
+		}
+	}
+	&.drinks-01 {
+		.rbb-elementor-slider {
+			&.single {
+				&.layout-2 {
+					&::after {
+						display: none;
+					}
+					.rbb-slick-carousel {
+						padding-bottom: 4rem;
+						.slick-list {
+							overflow: inherit;
+							.item {
+								padding-bottom: 0;
+								.item-content {
+									&::before {
+										background: url(../images/elementor/widgets/slick/bg-bottom.svg);
+										bottom: 0;
+										content: "";
+										height: 38px;
+										left: 0;
+										position: absolute;
+										width: 100%;
+										z-index: 0;
+									}
+									> div {
+										> div {
+											@media (min-width: 1024px) {
+												max-width: 100%;
+												margin-left: 15px;
+												margin-right: 15px;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.multiple {
+				&.layout-9 {
+					.title_block {
+						display: inline-grid;
+						margin-bottom: 3rem;
+						.sub-title {
+							order: -1;
+							font-weight: 700;
+							color: var(--rbb-general-primary-color);
+						}
+					}
+					.block__content {
+						> div {
+							max-width: 250px;
+						}
+					}
+				}
+			}
+		}
+		.elementor-image-box-wrapper {
+			.elementor-image-box-content {
+				.elementor-image-box-title {
+					font-family: var(--typography-heading);
+					font-weight: var(--typography-heading-variant);
+				}
+			}
+		}
+		.banner-video {
+			.rbb-button {
+				.button-icon {
+					background: var(--rbb-general-primary-color);
+				}
+			}
+		}
+		.rbb-testimonial {
+			.testimonial_text {
+				color: #555;
+				font-family: var(--typography-heading);
+			}
+		}
+		.banner-group {
+			overflow: hidden;
+			.elementor-column-gap-default {
+				margin-left: -7.5px;
+				margin-right: -7.5px;
+			}
+		}
+		.rbb_woo_products.layout-9 .slick-list .slick-slide .item .item-product .border {
+			border: 1px solid #e5e7eb;
+		}
+		.banner-7 {
+			.custom-html .box-content {
+				color: var(--rbb-general-body-text-color);
+				p {
+					color: var(--rbb-general-body-text-color);
+					padding-top: 0;
+				}
+				.image-box {
+					margin-bottom: 14px;
+					h4 {
+						color: var(--rbb-general-heading-color);
+					}
+				}
+			}
+		}
+		.banner-9 {
+			border-radius: 0;
+		}
+	}
+}
+@media (max-width: 1199px) {
+	body {
+		&.drinks-01 {
+			.coffee-bean {
+				.elementor-column-gap-default {
+					flex-wrap: wrap;
+					.banner-img {
+						order: -1;
+					}
+				}
+			}
+			.rbb_woo_products {
+				&.layout-8 {
+					.rbb-slick-carousel {
+						.slick-arrow {
+							display: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	body {
+		&.drinks-01 {
+			.gallerry {
+				.gallerry-title {
+					order: -1;
+				}
+			}
+		}
+		.footer-title1.style2 {
+			order: 1;
+		}
+	}
+}

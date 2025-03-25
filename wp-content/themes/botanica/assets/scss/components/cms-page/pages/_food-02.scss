@@ -1,0 +1,82 @@
+// .................homepage Food 02.................
+.food-02 {
+	.rbb-elementor-slider {
+		&.single {
+			&.default {
+				.slick-dots {
+					left: 18.5%;
+					padding-bottom: 60px;
+					@media (max-width: 1780px) {
+						left: 16.4%;
+						padding-bottom: 50px;
+					}
+					@media (max-width: 1450px) {
+						left: 8.1%;
+					}
+					@media (max-width: 1200px) {
+						left: 50px;
+						padding-bottom: 30px;
+					}
+					li {
+						button {
+							background: var(--rbb-general-secondary-color);
+						}
+						&.slick-active {
+							box-shadow:
+								0 0 0 1px
+								var(--rbb-general-primary-color);
+							button {
+								background: var(--rbb-general-primary-color);
+							}
+							&:hover {
+								button {
+									background: var(--rbb-general-primary-color);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.home-newsletter {
+	form {
+		.footer-form {
+			.wpcf7-form-control-wrap {
+				input {
+					padding-right: 100px;
+					background: #fff;
+					color: #000;
+					border: 1px solid transparent !important;
+					&::placeholder {
+						text-transform: uppercase;
+						font-size: 10px;
+						color: #bdbdbd;
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 2000px) {
+	.food-02 {
+		.rbb-elementor-slider {
+			&.single {
+				&.default {
+					.slick-dots {
+						left: 27%;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.food-02 {
+		.product_price {
+			font-size: 12px;
+		}
+	}
+}

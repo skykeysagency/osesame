@@ -1,0 +1,67 @@
+<?php return array(
+    'root' => array(
+        'name' => 'risingbamboo/merlin',
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
+        'reference' => 'fc360b80dcceb02b7e2d58b6ea6ea7d77db3562a',
+        'type' => 'wordpress-theme',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'monolog/monolog' => array(
+            'pretty_version' => '2.9.3',
+            'version' => '2.9.3.0',
+            'reference' => 'a30bfe2e142720dfa990d0a7e573997f5d884215',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../monolog/monolog',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/log' => array(
+            'pretty_version' => '1.1.4',
+            'version' => '1.1.4.0',
+            'reference' => 'd49695b909c3b7628b6289db5479a1c204601f11',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/log',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/log-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+            ),
+        ),
+        'risingbamboo/merlin' => array(
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => 'fc360b80dcceb02b7e2d58b6ea6ea7d77db3562a',
+            'type' => 'wordpress-theme',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'risingbamboo/wp-content-importer' => array(
+            'pretty_version' => '0.2.0',
+            'version' => '0.2.0.0',
+            'reference' => '799c9e03516f38052a7ea3cb0eef7fa4c6fd49b2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../risingbamboo/wp-content-importer',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'roave/security-advisories' => array(
+            'pretty_version' => 'dev-latest',
+            'version' => 'dev-latest',
+            'reference' => 'ff7456939acba6dd515a8a10aad66be6bc1b8dc1',
+            'type' => 'metapackage',
+            'install_path' => null,
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => true,
+        ),
+    ),
+);

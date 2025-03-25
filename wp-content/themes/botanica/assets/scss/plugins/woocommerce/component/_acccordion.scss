@@ -1,0 +1,40 @@
+.rbb-accordion {
+	.rbb-accordion-title {
+		font-size: 16px;
+		color: #909090;
+		padding: 13px 0;
+		border-bottom: 1px solid #ededed;
+		position: relative;
+		transition: 0.3s;
+		&:after {
+			content: "\eaf4";
+			position: absolute;
+			font-family: "rbb-font" !important;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 0px;
+			font-size: 18px;
+			font-weight: 400;
+		}
+		&:hover,
+		&.act {
+			color: var(--rbb-general-primary-color);
+			border-bottom: 1px solid var(--rbb-general-primary-color);
+		}
+	}
+	.rbb-accordion-content {
+		h2 {
+			display: none;
+		}
+		.description-bottom {
+			padding: 30px 0px 20px 0px;
+			> div{
+				width: 100%!important;
+				&.description-right{
+					padding-left: 0px;
+					padding-top: 40px;
+				}
+			}
+		}
+	}
+}

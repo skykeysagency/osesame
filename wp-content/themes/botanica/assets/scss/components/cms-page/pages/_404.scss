@@ -1,0 +1,20 @@
+// ............ page error-404 ..............
+.error404 {
+	#rbb-page-title {
+		display: none;
+	}
+	.page-content {
+		.content {
+			.button-action {
+				a {
+					color: var(--rbb-general-button-color);
+					background-color: var(--rbb-general-button-bg-color);
+					&:hover {
+						color: var(--rbb-general-button-hover-color);
+						background-color: var(--rbb-general-button-bg-hover-color);
+					}
+				}
+			}
+		}
+	}
+}

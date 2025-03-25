@@ -1,0 +1,19 @@
+.footer-9 {
+	form.wpcf7-form .footer-form .wpcf7-form-control-wrap input {
+		background: #0000004d;
+		border: 1px solid #fff3;
+	}
+}
+.footer-grocery-02 {
+	.rbb_contact_shortcode_address,
+	.rbb_contact_shortcode_email {
+		color: #fff;
+	}
+}
+@media (max-width: 1023px) {
+	.footer-grocery-02 {
+		.footer-logo {
+			order: -1;
+		}
+	}
+}

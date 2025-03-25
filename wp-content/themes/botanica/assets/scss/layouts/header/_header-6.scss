@@ -1,0 +1,235 @@
+/* Default Header 6 */
+.rbb-default-header {
+	&.header-6 {
+		#menu-primary {
+			> .level-1 {
+				> a {
+					.menu-item-title {
+						text-transform: uppercase;
+						font-size: 12px;
+						&::after {
+							height: 1px;
+						}
+					}
+				}
+				&:first-child {
+					> a {
+						margin-left: 0;
+					}
+					&:hover {
+						> ul {
+							left: 15px;
+						}
+					}
+				}
+			}
+		}
+		&.active {
+			.rbb-header-sticky {
+				&::after {
+					opacity: 1;
+					height: 100%;
+				}
+			}
+		}
+		.rbb-product-search-content2 {
+			.rbb-search-form {
+				.input-group {
+					box-shadow: 0 8px 10px 0 rgba(#000, 0.05);
+					.search-icon {
+						font-size: var(--rbb-search-icon-size);
+					}
+					.input-search {
+						&::placeholder {
+							font-size: 0;
+						}
+					}
+					label {
+						left: 50px;
+						color: #b0b0b0;
+					}
+				}
+			}
+		}
+		.rbb-account {
+			.rbb-account-icon-wrap {
+				box-shadow: 0 8px 10px 0 rgba(#000, 0.05);
+				&:hover {
+					background: var(--rbb-general-secondary-color);
+					.rbb-account-icon {
+						color: #fff;
+					}
+				}
+				&::before {
+					display: none;
+				}
+			}
+		}
+		.rbb-wishlist {
+			.wishlist-icon-link {
+				border-color: var(--rbb-wishlist-icon-border-color);
+				box-shadow: 0 8px 10px 0 rgba(#000, 0.05);
+				.wishlist-icon {
+					color: var(--rbb-wishlist-icon-color);
+				}
+				&:hover {
+					.wishlist-icon {
+						color: #fff;
+					}
+				}
+			}
+		}
+		.border-cart {
+			.rbb-mini-cart {
+				.dropdown {
+					.mini-cart-icon {
+						width: 50px;
+						border-radius: 100%;
+						&::before {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+		.rbb-mini-cart .dropdown .mini-cart-icon {
+			border-color: var(--rbb-mini-cart-icon-border-color);
+			border-radius: 30px;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			background: #fff;
+			box-shadow: 0 8px 10px 0 rgba(#000, 0.05);
+			width: 65px;
+			height: 50px;
+			&::before {
+				content: "";
+				position: absolute;
+				height: 35px;
+				width: 1px;
+				left: 0;
+				top: 5px;
+				background: #d8d8d8;
+			}
+			button {
+				height: 50px;
+				width: 50px;
+				&:hover {
+					.cart-icon {
+						color: var(--rbb-general-secondary-color);
+					}
+				}
+			}
+			.cart-icon {
+				color: var(--rbb-mini-cart-icon-color);
+			}
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.rbb-default-header {
+		&.header-6 {
+			#menu-primary {
+				> .level-1 {
+					> a {
+						margin: 0 12px;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+	.rbb-default-header {
+		&.header-6 {
+			.header-inner {
+				#rbb-header-right {
+					.rbb-product-search {
+						.rbb-product-search-content2 {
+							.click-search-mobile {
+								display: flex;
+								border-radius: 50px;
+								color: var(--rbb-mini-cart-icon-color);
+								border-color: var(--rbb-wishlist-icon-border-color);
+								box-shadow: 0 8px 10px 0 rgba(0, 122, 75, 0.05);
+								transition: 0.3s;
+							}
+							&.active {
+								.click-search-mobile {
+									border-top-left-radius: 0;
+									border-bottom-left-radius: 0;
+									.search-icon {
+										&::before {
+											content: "✕";
+											font-size: 20px;
+											color: var(--rbb-mini-cart-icon-color);
+										}
+									}
+								}
+								.rbb-search-form {
+									opacity: 1;
+									visibility: inherit;
+									width: 200px;
+									right: 45px;
+								}
+							}
+							display: inline-flex;
+							.rbb-product-search-content > span {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1023px) {
+	.rbb-default-header {
+		&.header-6 {
+			.toggle-megamenu {
+				&::after,
+				&::before {
+					background-color: #000;
+				}
+
+				.icon-directional {
+					&::before {
+						background-color: #000;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	body {
+		&.order-tracking,
+		&.error404,
+		&.search,
+		&.single-post,
+		&.single-product {
+			header {
+				&.header-6 {
+					position: relative;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.rbb-default-header {
+		&.header-6 {
+			.rbb-mini-cart {
+				.dropdown {
+					.mini-cart-icon {
+						width: auto;
+						border-radius: 30px;
+						&::before {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

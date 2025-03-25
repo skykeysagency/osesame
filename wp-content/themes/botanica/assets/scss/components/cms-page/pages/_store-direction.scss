@@ -1,0 +1,44 @@
+// ..............  store-direction...............
+.store-direction {
+	position: relative;
+	.elementor-widget-google_maps {
+		margin-bottom: 0 !important;
+	}
+	.map-content {
+		position: absolute;
+		top: 50%;
+		left: 16.1%;
+		transform: translateY(-50%);
+		max-width: 410px;
+		.hover-icon {
+			.elementor-social-icon {
+				background: #fff;
+				i {
+					color: var(--rbb-general-primary-color);
+				}
+				svg {
+					fill: var(--rbb-general-primary-color);
+				}
+				&:hover {
+					background: var(--rbb-general-secondary-color);
+					i {
+						color: #fff;
+						margin-left: -1px;
+					}
+					svg {
+						fill: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.store-direction {
+		.map-content {
+			left: 15px;
+			right: 15px;
+			width: auto !important;
+		}
+	}
+}

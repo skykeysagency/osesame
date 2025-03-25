@@ -1,0 +1,236 @@
+.slick-slider {
+	.slick-track {
+		margin-left: 0;
+	}
+	.slick-dots {
+		li {
+			width: 18px;
+			height: 18px;
+			padding: 6px;
+			border-radius: 100%;
+			&.slick-active {
+				box-shadow: 0 0 0 1px var(--rbb-general-primary-color);
+				&:hover button,
+				button {
+					transform: scale(1);
+					background: var(--rbb-general-primary-color);
+				}
+			}
+			&:hover {
+				button {
+					transition: all 0.3s;
+					transform: scale(1.3);
+					background: var(--rbb-general-primary-color);
+				}
+			}
+			button {
+				position: relative;
+				width: 6px;
+				height: 6px;
+				padding: 3px;
+				border-radius: 100%;
+				text-indent: -9999px;
+				transition: all 0.3s;
+				background: var(--rbb-general-button-color);
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+	&.dots-style2 {
+		.slick-dots {
+			li {
+				button {
+					background: var(--rbb-general-secondary-color);
+				}
+				&.slick-active {
+					button {
+						background: var(--rbb-general-primary-color);
+					}
+				}
+			}
+		}
+	}
+	.slick-arrow {
+		height: 53px;
+		width: 53px;
+		margin-top: -5px;
+		border-radius: 100%;
+		background: #fff !important;
+		border: 1px solid var(--rbb-general-button-bg-color);
+		box-shadow: 3px 4px 8px 0 rgb(0 0 0 / 10%);
+		transition: all 0.5s ease;
+		z-index: 9;
+		@media (max-width: 767px) {
+			display: none !important;
+		}
+		&::after,
+		&::before {
+			content: "";
+			width: 15px;
+			height: 1px;
+			position: absolute;
+			top: 50%;
+			background: #000;
+			transition: transform 0.5s ease;
+		}
+		&.slick-disabled {
+			opacity: 0.7;
+			cursor: not-allowed;
+		}
+		&:hover {
+			border: 1px solid var(--rbb-general-primary-color);
+			background: var(--rbb-general-primary-color) !important;
+		}
+		&.slick-next {
+			right: 0;
+			&::before {
+				left: 47%;
+				transform: rotate(-45deg) translate(-50%, -50%);
+			}
+			&::after {
+				left: 47%;
+				transform: rotate(45deg) translate(-50%, 50%);
+			}
+			&.slick-disabled {
+				&::after,
+				&::before {
+					left: 50%;
+					transform: rotate(0deg) translate(-50%, -50%) !important;
+				}
+			}
+			&:hover {
+				&::before {
+					background: #fff;
+					transform: rotate(-30deg) translate(-50%, -50%);
+				}
+				&::after {
+					background: #fff;
+					transform: rotate(30deg) translate(-50%, 50%);
+				}
+			}
+		}
+		&.slick-prev {
+			left: 0;
+			&::before {
+				right: 47%;
+				transform: rotate(-135deg) translate(-50%, -50%);
+			}
+			&::after {
+				right: 47%;
+				transform: rotate(135deg) translate(-50%, 50%);
+			}
+			&.slick-disabled {
+				&::after {
+					right: 50%;
+					transform: rotate(180deg) translate(-50%, -50%) !important;
+				}
+				&::before {
+					right: 50%;
+					transform: rotate(-180deg) translate(-50%, -50%) !important;
+				}
+			}
+			&:hover {
+				&::before {
+					background: #fff;
+					transform: rotate(-150deg) translate(-50%, -50%);
+				}
+				&::after {
+					background: #fff;
+					transform: rotate(150deg) translate(-50%, 50%);
+				}
+			}
+		}
+	}
+}
+.slick-arrow-custom,
+.arrow-custom,
+.slick-arrow {
+	transition: all 0.5s ease;
+	.prev_custom,
+	.next_custom {
+		position: relative;
+		background: #fff;
+		border: 1px solid var(--rbb-general-button-bg-color);
+		box-shadow: 3px 4px 8px 0 rgb(0 0 0 / 10%);
+		transition: all 0.5s ease;
+		&.swiper-button-disabled {
+			opacity: 0.7;
+			cursor: not-allowed;
+		}
+		&:hover {
+			color: #fff;
+			border: 1px solid var(--rbb-general-primary-color);
+			background: var(--rbb-general-primary-color);
+		}
+		&::after,
+		&::before {
+			content: "";
+			width: 15px;
+			height: 1px;
+			position: absolute;
+			top: 50%;
+			background: #000;
+			transition: transform 0.5s ease;
+		}
+	}
+	.next_custom {
+		&::before {
+			left: 47%;
+			transform: rotate(-45deg) translate(-50%, -50%);
+		}
+		&::after {
+			left: 47%;
+			transform: rotate(45deg) translate(-50%, 50%);
+		}
+		&:hover {
+			&::before {
+				background: #fff;
+				transform: rotate(-30deg) translate(-50%, -50%);
+			}
+			&::after {
+				background: #fff;
+				transform: rotate(30deg) translate(-50%, 50%);
+			}
+		}
+		&.swiper-button-disabled {
+			&::after,
+			&::before {
+				left: 50%;
+				transform: rotate(0deg) translate(-50%, -50%) !important;
+			}
+		}
+	}
+	.prev_custom {
+		&::before {
+			right: 47%;
+			transform: rotate(-135deg) translate(-50%, -50%);
+		}
+		&::after {
+			right: 47%;
+			transform: rotate(135deg) translate(-50%, 50%);
+		}
+		&:hover {
+			&::before {
+				background: #fff;
+				transform: rotate(-150deg) translate(-50%, -50%);
+			}
+			&::after {
+				background: #fff;
+				transform: rotate(150deg) translate(-50%, 50%);
+			}
+		}
+		&.swiper-button-disabled {
+			&::after {
+				right: 50%;
+				transform: rotate(180deg) translate(-50%, -50%) !important;
+			}
+			&::before {
+				right: 50%;
+				transform: rotate(-180deg) translate(-50%, -50%) !important;
+			}
+		}
+	}
+
+}

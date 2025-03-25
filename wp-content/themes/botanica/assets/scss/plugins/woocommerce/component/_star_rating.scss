@@ -1,0 +1,113 @@
+/**
+ * Star rating
+ */
+ .star-rating {
+ 	overflow: hidden;
+ 	position: relative;
+ 	height: var(--rbb-rating-icon-size);
+ 	line-height: var(--rbb-rating-icon-size);
+ 	width: calc(var(--rbb-rating-icon-size) * 5);
+ 	font-family: "rbb-font", serif;
+ 	font-weight: 400;
+
+ 	&::before {
+ 		content: var(--rbb-rating-icon-content) var(--rbb-rating-icon-content)
+ 		var(--rbb-rating-icon-content) var(--rbb-rating-icon-content)
+ 		var(--rbb-rating-icon-content);
+ 		opacity: 1;
+ 		float: left;
+ 		top: 0;
+ 		left: 0;
+ 		position: absolute;
+ 		font-size: var(--rbb-rating-icon-size);
+ 		color: #c3c3c3;
+ 	}
+
+ 	span {
+ 		overflow: hidden;
+ 		float: left;
+ 		top: 0;
+ 		left: 0;
+ 		position: absolute;
+ 		padding-top: 1.5em;
+ 	}
+
+ 	span::before {
+ 		content: var(--rbb-rating-icon-content) var(--rbb-rating-icon-content)
+ 		var(--rbb-rating-icon-content) var(--rbb-rating-icon-content)
+ 		var(--rbb-rating-icon-content);
+ 		top: 0;
+ 		position: absolute;
+ 		left: 0;
+ 		font-size: var(--rbb-rating-icon-size);
+ 		color: var(--rbb-rating-icon-color);
+ 	}
+ }
+
+ p.stars {
+ 	a {
+ 		position: relative;
+ 		height: 1em;
+ 		width: 1em;
+ 		text-indent: -999em;
+ 		display: inline-block;
+ 		text-decoration: none;
+ 		margin-right: 1px;
+ 		font-weight: 400;
+
+ 		&::before {
+ 			display: block;
+ 			position: absolute;
+ 			top: 0;
+ 			left: 0;
+ 			width: 1em;
+ 			height: 1em;
+ 			line-height: 1;
+ 			font-family: "rbb-font", serif;
+ 			content: var(--rbb-rating-icon-content);
+ 			text-indent: 0;
+ 			color: #c3c3c3;
+ 		}
+
+ 		&:hover {
+ 			~ a::before {
+ 				content: var(--rbb-rating-icon-content);
+ 				opacity: 1;
+ 				color: #c3c3c3;
+ 			}
+ 		}
+ 	}
+
+ 	&:hover {
+ 		a {
+ 			&::before {
+ 				opacity: 1;
+ 				color: var(--rbb-rating-icon-color);
+ 			}
+ 		}
+ 	}
+
+ 	&.selected {
+ 		a.active {
+ 			&::before {
+ 				content: var(--rbb-rating-icon-content);
+ 				opacity: 1;
+ 				color: var(--rbb-rating-icon-color);
+ 			}
+
+ 			~ a::before {
+ 				content: var(--rbb-rating-icon-content);
+ 				opacity: 1;
+ 				color: #c3c3c3;
+ 			}
+ 		}
+
+ 		a:not(.active) {
+ 			&::before {
+ 				content: var(--rbb-rating-icon-content);
+ 				opacity: 1;
+ 				color: var(--rbb-rating-icon-color);
+ 			}
+ 		}
+ 	}
+ }

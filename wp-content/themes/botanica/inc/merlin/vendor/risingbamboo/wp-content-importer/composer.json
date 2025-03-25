@@ -1,0 +1,18 @@
+{
+  "name": "risingbamboo/wp-content-importer",
+  "version": "0.2.0",
+  "description": "Improved WP content importer used RisingBamboo theme setup.",
+  "keywords": ["wp", "wordpress", "risingbamboo", "theme", "import", "content"],
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name":  "Rising Bamboo",
+      "email": "admin@risingbamboo.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "RisingBamboo\\WPContentImporter\\": "src/"
+    }
+  }
+}

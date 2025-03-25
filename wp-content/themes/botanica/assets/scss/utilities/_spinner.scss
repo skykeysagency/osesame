@@ -1,0 +1,36 @@
+.rbb-spinner {
+	border-top-color: var(--rbb-general-secondary-color);
+	-webkit-animation: rbb-spinner 1.5s linear infinite;
+	animation: spinner 1.5s linear infinite;
+	&::before {
+		content: "";
+		background: var(--rbb-block-loading);
+		background-size: 50px 50px;
+		width: 50px;
+		height: 50px;
+		display: block;
+		position: absolute;
+		z-index: 99999999;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50px, -39px);
+	}
+}
+
+@-webkit-keyframes rbb-spinner {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes rbb-spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

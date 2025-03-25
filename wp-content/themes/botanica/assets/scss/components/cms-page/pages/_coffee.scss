@@ -1,0 +1,99 @@
+// .................homepage coffee.................
+body {
+	&.coffee-01 {
+		@media (min-width: 1024px) {
+			.rbb-default-header {
+				&.header-5 {
+					position: absolute;
+					.rbb-header-sticky {
+						height: 110px;
+						.header-inner {
+							background: transparent;
+							.header-logo {
+								height: 110px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.banner-img-home3 {
+			overflow: hidden;
+			.elementor-column-gap-no {
+				margin: 0 -8px;
+			}
+		}
+		.rbb_woo_products {
+			&.layout-2 {
+				.swiper-container {
+					.item-product {
+						.border {
+							border: none;
+						}
+					}
+				}
+			}
+		}
+		.banner-image-box {
+			.elementor-image-box-wrapper {
+				display: flex;
+				align-items: center;
+				.elementor-image-box-img {
+					max-width: 55px;
+					@media (max-width: 767px) {
+						margin-right: 20px !important;
+					}
+				}
+				img {
+					max-height: 44px;
+					width: auto;
+				}
+			}
+		}
+		.footer-title1,
+		.footer-title2,
+		.footer-title3 {
+			.elementor-icon-list-item {
+				a {
+					&:hover {
+						span {
+							color: var(--rbb-general-secondary-color) !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.home {
+		@media (min-width: 1024px) {
+			.rbb-default-header {
+				&.header-5 {
+					position: absolute;
+					.rbb-header-sticky {
+						height: 110px;
+						.header-inner {
+							background: transparent;
+							.header-logo {
+								height: 110px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&:not(.coffee-01,.home) {
+		.rbb-default-header {
+			&.header-5 {
+				.header-logo {
+					box-shadow: none;
+					background-color: transparent;
+					&::after,
+					&::before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

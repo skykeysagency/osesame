@@ -1,0 +1,92 @@
+// .................homepage coffee 02.................
+body {
+	&.coffee-02 {
+		.rbb_woo_products {
+			&.layout-8 {
+				.title_left {
+					padding-bottom: 10px;
+				}
+				.rbb-slick-carousel {
+					margin-bottom: 60px;
+					.slick-dots {
+						bottom: -60px;
+					}
+					.slick-arrow {
+						&.slick-prev {
+							left: -24px;
+						}
+						&.slick-next {
+							right: -24px;
+						}
+					}
+				}
+			}
+			.slick-slider {
+				.slick-dots {
+					li {
+						width: 10px;
+						padding: 5px 0;
+						button {
+							width: 9px;
+							height: 9px;
+							background: #bebebe;
+						}
+						&.slick-active {
+							box-shadow: none;
+							button {
+								background: var(--rbb-general-primary-color);
+								&:hover {
+									background: var(--rbb-general-primary-color);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.elementor-image-box-wrapper {
+			.elementor-image-box-content {
+				.elementor-image-box-title {
+					font-family: var(--typography-heading);
+					font-weight: var(--typography-heading-variant);
+				}
+			}
+		}
+		.banner-video {
+			.rbb-button {
+				.button-icon {
+					background: var(--rbb-general-primary-color);
+				}
+			}
+		}
+		.rbb-testimonial {
+			.testimonial_text {
+				color: #555;
+				font-family: var(--typography-heading);
+			}
+		}
+	}
+}
+@media (max-width: 1199px) {
+	body {
+		&.coffee-02 {
+			.coffee-bean {
+				.elementor-column-gap-default {
+					flex-wrap: wrap;
+					.banner-img {
+						order: -1;
+					}
+				}
+			}
+			.rbb_woo_products {
+				&.layout-8 {
+					.rbb-slick-carousel {
+						.slick-arrow {
+							display: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

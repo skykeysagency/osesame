@@ -1,0 +1,1 @@
+!function(n){"use strict";var e=function(n,e){e(n).find(".slick-carousel").slick({rtl:"true"===window.rbb_vars.rtl})};n(window).on("elementor/frontend/init",(function(){elementorFrontend.hooks.addAction("frontend/element_ready/rbb_testimonials.default",e)}))}(jQuery);

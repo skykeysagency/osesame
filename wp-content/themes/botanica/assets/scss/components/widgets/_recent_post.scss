@@ -1,0 +1,46 @@
+/* Recent Posts
+--------------------------------------------- */
+.wp-block-latest-posts {
+	li {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+
+		.wp-block-latest-posts__featured-image {
+			float: left;
+			margin-right: 20px;
+			border-radius: 4px;
+			overflow: hidden;
+		}
+
+		.wp-block-latest-posts__post-title {
+			font-family: var(--typography-heading);
+			font-weight: var(--typography-heading-variant);
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 3;
+			margin-bottom: 10px;
+		}
+
+		.wp-block-latest-posts__post-date {
+			padding-top: 10px;
+			color: #909090;
+			font-weight: 600;
+			font-size: 10px;
+			text-transform: uppercase;
+
+			&::before {
+				content: "\eb05";
+				font-family: rbb-font, serif;
+				font-size: 22px;
+				padding-right: 9px;
+				font-weight: 400;
+				vertical-align: text-top;
+				line-height: 13px;
+			}
+		}
+	}
+}

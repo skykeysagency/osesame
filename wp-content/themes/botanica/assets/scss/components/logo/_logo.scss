@@ -1,0 +1,27 @@
+#rbb-branding {
+	a {
+		img {
+			&.logo {
+				max-width: var(--rbb-logo-max-width);
+				padding: var(--rbb-logo-padding);
+			}
+			&.sticky-logo {
+				max-width: var(--rbb-logo-sticky-max-width);
+				padding: var(--rbb-logo-sticky-padding);
+				display: none;
+			}
+		}
+	}
+}
+.header-visible.header-stuck {
+	#rbb-branding {
+		.sticky-logo {
+			display: block;
+			visibility: visible;
+		}
+		.sticky-logo + .logo {
+			display: none;
+			visibility: hidden;
+		}
+	}
+}

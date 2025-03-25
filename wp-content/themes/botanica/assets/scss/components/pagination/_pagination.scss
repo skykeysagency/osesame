@@ -1,0 +1,74 @@
+.pagination {
+	margin-top: 80px;
+	.nav-links {
+		height: 46px;
+		text-align: center;
+	}
+}
+.page-numbers {
+	display: inline-block;
+	text-align: center;
+	li {
+		float: left;
+		padding: 0 5px;
+
+		span,
+		a {
+			height: 46px;
+			width: 46px;
+			display: block;
+			line-height: 46px;
+			border-radius: 100%;
+			font-weight: bold;
+			font-size: 13px;
+			transition: 0.3s;
+			border: 1px solid var(--rbb-general-button-bg-color);
+		}
+		a {
+			color: var(--rbb-general-primary-color);
+			&:focus,
+			&:hover {
+				transition: 0.3s;
+				border: 1px solid var(--rbb-general-button-bg-color);
+				background: var(--rbb-general-button-bg-color);
+			}
+
+			&.prev,
+			&.next {
+				color: var(--rbb-general-link-color);
+				font-weight: 400;
+				padding: 0 15px;
+				width: auto;
+				&:hover {
+					color: var(--rbb-general-button-bg-hover-color);
+				}
+			}
+		}
+		span {
+			background: transparent;
+			&.current {
+				background: var(--rbb-general-button-bg-color);
+			}
+		}
+	}
+}
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	.site-main & {
+		margin: 0 0 1.5em;
+	}
+
+	.nav-links {
+		display: flex;
+	}
+
+	.nav-previous {
+		flex: 1 0 50%;
+	}
+
+	.nav-next {
+		text-align: end;
+		flex: 1 0 50%;
+	}
+}

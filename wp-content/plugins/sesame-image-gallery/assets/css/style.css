@@ -1,0 +1,192 @@
+.sesame-image-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    padding-right: 40px;
+}
+
+.main-image-container {
+    position: relative;
+}
+
+.glow-effect {
+    position: absolute;
+    inset: -16px;
+    border-radius: 16px;
+    background: linear-gradient(to bottom right, #F0D7C2, rgba(138, 93, 93, 0.4), rgba(255, 248, 240, 0.3));
+    opacity: 0.4;
+    filter: blur(20px);
+    animation: pulse 2s infinite alternate;
+}
+
+.main-image {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(240, 215, 194, 0.3);
+    background-color: transparent;
+}
+
+.main-image img {
+    width: 100%;
+
+    object-fit: cover;
+    display: block;
+}
+
+.bottom-left-image {
+    position: absolute;
+    bottom: -32px;
+    left: -32px;
+    width: 192px;
+    height: 192px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 4px solid white;
+    transform: rotate(6deg);
+    background-color: transparent;
+    z-index: 2;
+}
+
+.top-right-image {
+    position: absolute;
+    right: -24px;
+    top: 33%;
+    width: 192px;
+    height: 192px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 4px solid white;
+    transform: rotate(-6deg);
+    background-color: transparent;
+    z-index: 2;
+}
+
+.bottom-left-image img,
+.top-right-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive pour les mobiles */
+@media (max-width: 767px) {
+    .bottom-left-image,
+    .top-right-image {
+        width: 144px;
+        height: 144px;
+    }
+}
+
+/* Styles pour le widget Nos Spécialités */
+.sesame-specialties {
+    width: 100%;
+}
+
+.sesame-specialties-title {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.sesame-specialties-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 15px;
+}
+
+.sesame-specialties-separator-container {
+    width: 100%;
+}
+
+.sesame-specialties-separator {
+    display: inline-block;
+}
+
+.sesame-products-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.sesame-product-item {
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.sesame-product-item:hover {
+    transform: translateY(-5px);
+}
+
+.sesame-product-image {
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.sesame-product-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.sesame-product-item:hover .sesame-product-image img {
+    transform: scale(1.05);
+}
+
+.sesame-product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.sesame-product-price {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #8A5D5D;
+}
+
+.sesame-product-add-to-cart {
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.sesame-product-item:hover .sesame-product-add-to-cart {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sesame-product-add-to-cart a {
+    display: inline-block;
+    background-color: #F0D7C2;
+    color: #5F3C3C;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sesame-product-add-to-cart a:hover {
+    background-color: #8A5D5D;
+    color: white;
+}

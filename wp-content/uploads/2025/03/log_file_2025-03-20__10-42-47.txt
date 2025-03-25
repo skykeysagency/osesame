@@ -1,0 +1,62 @@
+
+---Downloaded files---
+The import files for: Vegetable 01 were successfully downloaded!
+Initial max execution time = 360
+Files info:
+Site URL = https://o-sesame.fr
+Data file = /home/u570625223/domains/o-sesame.fr/public_html/wp-content/uploads/2025/03/demo-content-import-file_2025-03-20__10-42-47.xml
+Widget file = /home/u570625223/domains/o-sesame.fr/public_html/wp-content/uploads/2025/03/demo-widgets-import-file_2025-03-20__10-42-47.json
+Customizer file = /home/u570625223/domains/o-sesame.fr/public_html/wp-content/uploads/2025/03/demo-customizer-import-file_2025-03-20__10-42-47.dat
+Redux files:
+not defined!
+
+---ocdi/before_content_import---
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+---ocdi/before_widgets_import---
+
+
+---Importing widgets---
+Sidebar Blog Top : 
+
+Bloc - No Title - Widget already exists
+Bloc - No Title - Widget already exists
+
+Sidebar Blog : 
+
+Bloc - No Title - Widget already exists
+Bloc - No Title - Widget already exists
+Bloc - No Title - Widget already exists
+
+Sidebar Shop Filter : 
+
+[Rbb] Filter Products By Category - Categories - Widget already exists
+[Rbb] Filter Products By Price - Price - Widget already exists
+[Rbb] Filter Products By Brands - Brands - Widget already exists
+[Rbb] Filter By Attributes - Size - Widget already exists
+[Rbb] Filter Products By Rating - Ratings - Widget already exists
+[Rbb] Filter By Attributes - Colors - Widget already exists
+
+Product Category Bottom : 
+
+[Rbb] Products Tags - All Tags : - Widget already exists
+
+
+
+---Importing customizer settings---
+Customizer settings import finished!
+
+---ocdi/after_import---
+

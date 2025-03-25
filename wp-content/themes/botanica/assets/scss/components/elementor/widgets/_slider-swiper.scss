@@ -1,0 +1,174 @@
+.rbb-elementor-slider {
+	&.multiple {
+		&.layout-6 {
+			.block_title {
+				.sub-title {
+					color: var(--rbb-general-secondary-color);
+				}
+				.main-title {
+					color: #fff;
+				}
+			}
+			.block__content {
+				img {
+					transition: all 0.3s;
+					display: inline-block;
+				}
+				.btn_view-all {
+					transition: all 0.3s;
+					background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%236EC000FF' stroke-width='3' stroke-dasharray='8' stroke-dashoffset='94' stroke-linecap='round'/%3e%3c/svg%3e");
+					span {
+						background-color: var(--rbb-general-secondary-color);
+					}
+				}
+				&:hover {
+					img {
+						transform: translateY(-15px);
+					}
+					.btn_view-all {
+						opacity: 1;
+						transform: translateX(-50%) translateY(50%);
+					}
+				}
+			}
+			.swiper-scrollbar {
+				.swiper-scrollbar-drag {
+					cursor: pointer;
+					height: 3px;
+					position: relative;
+					top: -1px;
+					z-index: 2;
+					background: var(--rbb-general-secondary-color);
+				}
+			}
+		}
+		&.layout-7 {
+			.block_title {
+				.sub-title {
+					color: var(--rbb-general-secondary-color);
+				}
+			}
+			.block__content {
+				.item-img {
+					&::before {
+						content: "";
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						bottom: -3px;
+						left: 0;
+						z-index: 1;
+						background: url(../images/elementor/widgets/slick/bg-button.png) center no-repeat;
+						background-position: bottom center;
+						background-size: auto;
+					}
+					img {
+						transition: all ease-out 0.3s;
+						transform: scale(1, 1);
+						display: inline-block;
+						width: 100%;
+					}
+					.btn_view-all {
+						transition: all 0.3s;
+						z-index: 2;
+						&::before {
+							content: "";
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							transform: rotate(0deg);
+							transition: all 0.5s;
+							border-radius: 100%;
+							border-style: dashed;
+							border-width: 2px 2px 2px 2px;
+							border-color: var(--rbb-general-secondary-color);
+						}
+						span {
+							background-color: var(--rbb-general-secondary-color);
+						}
+						&:hover {
+							&::before {
+								transform: rotate(360deg);
+								border-color: var(--rbb-general-primary-color);
+							}
+							span {
+								background: var(--rbb-general-primary-color);
+							}
+						}
+					}
+				}
+				&:hover {
+					.item-img {
+						img {
+							transition: all ease-out 0.3s;
+							transform: scale(1.1, 1.1);
+						}
+					}
+				}
+			}
+			.swiper-scrollbar {
+				left: 0;
+				width: 100%;
+				height: 1px;
+				bottom: 3px;
+				background: #daf3b8;
+				position: relative;
+				.swiper-scrollbar-drag {
+					cursor: pointer;
+					height: 3px;
+					position: relative;
+					top: -1px;
+					background: var(--rbb-general-secondary-color);
+				}
+			}
+		}
+		&.layout-9 {
+			.block__content {
+				img {
+					transition: all 0.3s;
+					display: inline-block;
+				}
+				.btn_view-all {
+					transition: all 0.3s;
+					background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%236EC000FF' stroke-width='3' stroke-dasharray='8' stroke-dashoffset='94' stroke-linecap='round'/%3e%3c/svg%3e");
+					span {
+						background-color: var(--rbb-general-secondary-color);
+					}
+				}
+				&:hover {
+					img {
+						transform: translateY(-20px);
+					}
+					.btn_view-all {
+						opacity: 1;
+						transform: translateX(-50%) translateY(50%);
+					}
+				}
+			}
+			.swiper-scrollbar {
+				.swiper-scrollbar-drag {
+					cursor: pointer;
+					height: 3px;
+					position: relative;
+					top: -1px;
+					z-index: 2;
+					background: var(--rbb-general-secondary-color);
+				}
+			}
+		}
+	}
+}
+@media (min-width: 1740px) {
+	.rbb-elementor-slider {
+		&.multiple {
+			.bg-left,
+			.bg-right {
+				display: block;
+				img {
+					-webkit-animation: iconbanner 3s linear infinite;
+					animation: iconbanner 3s linear infinite;
+				}
+			}
+		}
+	}
+}

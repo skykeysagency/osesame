@@ -1,0 +1,73 @@
+html {
+	body {
+		color: var(--rbb-general-body-text-color);
+		background-color: var(--rbb-general-body-background-color);
+		font-family: var(--typography-body);
+		font-size: var(--typography-body-font-size);
+		letter-spacing: var(--typography-body-letter-spacing);
+		line-height: var(--typography-body-line-height);
+		font-weight: var(--typography-body-variant);
+	}
+}
+body {
+	p {
+		margin-bottom: 0.75rem;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.title,
+	.main-title {
+		color: var(--rbb-general-heading-color);
+		font-family: var(--typography-heading);
+		font-weight: var(--typography-heading-variant);
+		line-height: var(--typography-heading-line-height);
+		letter-spacing: var(--typography-heading-letter-spacing);
+	}
+	.title_heading,
+	.blog_title,
+	.product_name {
+		font-family: var(--typography-heading);
+	}
+	.title-of {
+		color: var(--rbb-general-link-color);
+	}
+	.title-tooltips,
+	.quick-view,
+	.button,
+	input[type="submit"],
+	.button-text {
+		font-family: var(--typography-button);
+		font-size: var(--typography-button-font-size);
+		font-weight: var(--typography-button-variant);
+		text-transform: var(--typography-button-text-transform);
+	}
+	button {
+		&.button-icon {
+			font-family: var(--typography-body);
+			font-size: var(--typography-body-font-size);
+			font-weight: var(--typography-body-variant);
+			letter-spacing: var(--typography-body-letter-spacing);
+		}
+	}
+	input[type='text'],
+	input[type='email'],
+	input[type='url'],
+	input[type='password'],
+	input[type='search'],
+	input[type='number'],
+	input[type='tel'],
+	select,
+	textarea,
+	.woocommerce .select2-container--default .select2-selection--single,
+	.woocommerce .select2-container--default .select2-search--dropdown .select2-search__field,
+	.elementor-field-group .elementor-field-textual {
+		font-family: var(--typography-form);
+		font-size: var(--typography-form-font-size);
+		font-weight: var(--typography-form-variant);
+		letter-spacing: var(--typography-form-letter-spacing);
+	}
+}

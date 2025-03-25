@@ -1,0 +1,1 @@
+!function(e){"use strict";e(document.body).on("click",".rbb-sidebar-shop-filter a.filter-link",(function(r){r.preventDefault();var t=e(this).attr("href");window.RbbWoocommerceFilters.filterByUrl(t)}))}(jQuery);

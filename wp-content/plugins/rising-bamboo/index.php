@@ -1,0 +1,6 @@
+<?php
+/**
+ * RisingBambooCore
+ *
+ * @package RisingBambooCore
+ */

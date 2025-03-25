@@ -1,0 +1,65 @@
+/* Filter by rating
+--------------------------------------------- */
+.wc-blocks-filter-wrapper {
+	h3 {
+		font-size: 1rem;
+		padding-bottom: 15px;
+		border-bottom: 1px solid var(--rbb-general-button-bg-color);
+		&::before {
+			content: "";
+			font-family: rbb-font, serif;
+			font-size: 10px;
+			color: #222;
+			float: right;
+			line-height: 23px;
+		}
+	}
+	> div {
+		margin-bottom: 0;
+		.wc-block-checkbox-list {
+			padding-top: 20px;
+			.wc-block-components-checkbox {
+				.wc-block-components-checkbox__input {
+					width: 18px;
+					height: 18px;
+					border-radius: 4px;
+					border: 1px solid var(--rbb-general-button-bg-color);
+					&[type="checkbox"]:focus {
+						outline: none;
+						outline-offset: inherit;
+						box-shadow: none;
+					}
+					&:checked {
+						color: #fff;
+						border: 1px solid var(--rbb-general-link-hover-color);
+						background: var(--rbb-general-link-hover-color);
+					}
+				}
+				&:hover {
+					.wc-block-components-checkbox__input {
+						border: 1px solid var(--rbb-general-link-hover-color);
+					}
+				}
+				.wc-block-components-checkbox__mark {
+					fill: #fff;
+				}
+				.wc-block-components-checkbox__label {
+					padding-top: 2px;
+					padding-bottom: 1px;
+				}
+				.wc-block-components-product-rating__stars {
+					&::before {
+						color: #909090;
+					}
+					span::before {
+						color: #f7a92f;
+					}
+				}
+				.wc-block-components-product-rating-count {
+					color: #909090;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}

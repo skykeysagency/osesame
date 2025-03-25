@@ -1,0 +1,456 @@
+/* Header Account */
+.rbb-account {
+	.rbb-account-icon-wrap {
+		border-radius: var(--rbb-account-icon-border-radius);
+		border-width: var(--rbb-account-icon-border);
+		border-style: solid;
+		border-color: var(--rbb-account-icon-border-color);
+		.rbb-account-icon {
+			font-size: var(--rbb-account-icon-size);
+			color: var(--rbb-account-icon-color);
+		}
+		&:hover {
+			border-color: var(--rbb-general-secondary-color);
+			background: var(--rbb-general-secondary-color);
+		}
+	}
+}
+
+// ......button và input.........
+.woocommerce-Button.button {
+	height: 50px;
+	background: var(--rbb-general-primary-color);
+	padding: 12.5px 30px;
+	width: 100%;
+	border-radius: 5px;
+	margin-top: 30px;
+	color: #fff !important;
+	font-size: 11px;
+	transition: 0.35s;
+	&:hover {
+		background: var(--rbb-general-secondary-color);
+	}
+}
+.woocommerce-form-row {
+	label {
+		margin-bottom: 12px;
+		display: block;
+		font-weight: 600;
+		font-size: 12px;
+		.required {
+			text-decoration: none;
+		}
+	}
+	.input-text {
+		padding: 0 20px;
+		height: 50px;
+		width: 100%;
+		margin-bottom: 0;
+		border-radius: 5px;
+		border: solid 1px #eaeaea;
+		font-size: 12px;
+		&::placeholder {
+			text-transform: uppercase;
+			font-size: 10px;
+			color: #b1b1b1;
+		}
+		&:focus,
+		&:hover {
+			border: 1px solid var(--rbb-general-primary-color);
+			box-shadow: none;
+		}
+	}
+}
+.rbb-alert__danger {
+	width: 100%;
+	border-radius: 5px;
+	margin: 30px 0;
+	.flex-grow {
+		position: relative;
+		top: -2px;
+	}
+}
+// ........... popup account....................
+.account-form-popup {
+	.login-title {
+		.login_switch_title {
+			width: calc(50% - 10px);
+		}
+	}
+	input {
+		border: solid 1px #eaeaea;
+		outline: none !important;
+		transition: all 0.35s ease;
+		&::placeholder {
+			text-transform: uppercase;
+			font-size: 10px;
+			color: #b1b1b1;
+		}
+		&:focus,
+		&:hover {
+			border: 1px solid var(--rbb-general-primary-color);
+			box-shadow: none;
+		}
+	}
+	span:not(.show) {
+		color: #ff2a2a;
+	}
+	.remember-lost {
+		.remember {
+			input:checked + label::after {
+				opacity: 1;
+			}
+			label {
+				&::before {
+					width: 20px;
+					height: 20px;
+					content: "";
+					display: inline-block;
+					border-radius: 3px;
+					border-width: 1px;
+					border-style: solid;
+					border-color: var(--rbb-account-input-border-color);
+					margin-right: 10px;
+					position: relative;
+					top: 5px;
+					z-index: 2;
+				}
+				&::after {
+					width: 20px;
+					height: 18px;
+					content: "\eb43";
+					font-size: 10px;
+					color: #fff;
+					display: inline-block;
+					border-radius: 3px;
+					position: absolute;
+					top: 6px;
+					left: 0;
+					text-align: center;
+					transition: all 0.3s ease;
+					z-index: 1;
+					font-family: rbb-font, serif;
+					background: var(--rbb-general-primary-color);
+					opacity: 0;
+				}
+			}
+		}
+	}
+	.woocommerce-privacy-policy-text {
+		font-size: 0.75rem;
+		line-height: 22px;
+		a {
+			color: var(--rbb-general-link-color);
+			font-weight: 500;
+			&:hover {
+				color: var(--rbb-general-link-hover-color);
+			}
+		}
+	}
+}
+.toggle-login {
+	.rbb-account-content {
+		#menu-account {
+			margin-bottom: 9px;
+			li {
+				border: none;
+				padding: 1px 0;
+				a {
+					font-size: 13px;
+					font-weight: 400;
+				}
+			}
+		}
+	}
+	&.active {
+		.rbb-account-content {
+			opacity: 1;
+			visibility: inherit;
+			margin-top: 0;
+			z-index: 9;
+		}
+	}
+}
+// .......... page login...............
+body:not(.logged-in) {
+	.woocommerce {
+		text-align: center;
+		> h2 {
+			color: #222;
+			font-size: 24px;
+			margin-top: 80px;
+			margin-bottom: 1.36em;
+			position: relative;
+			display: inline-block;
+			&::before {
+				content: "";
+				left: -10px;
+				right: -10px;
+				height: 15px;
+				background: var(--rbb-general-secondary-color);
+				opacity: 0.2;
+				position: absolute;
+				bottom: 0;
+				z-index: -1;
+			}
+		}
+		> form.login {
+			max-width: 500px;
+			position: relative;
+			margin: 0 auto 80px auto;
+			&:has(.wp-block-group) {
+				max-width: 500px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.woocommerce-form-row {
+				margin-bottom: 20px;
+				label {
+					margin-bottom: 12px;
+					display: block;
+					font-weight: 600;
+					font-size: 12px;
+					.required {
+						color: #ff2a2a;
+					}
+				}
+			}
+			.form-row {
+				label {
+					display: flex;
+					[type="checkbox"] {
+						height: 20px;
+						width: 20px;
+						border-radius: 3px;
+						cursor: pointer;
+						border: 1px solid #d0d0d0;
+						color: var(--rbb-general-primary-color);
+					}
+					span {
+						padding-left: 10px;
+					}
+				}
+				.rememberme {
+					margin-right: 10px;
+				}
+				.woocommerce-form__input-checkbox {
+					&:focus {
+						box-shadow: none;
+					}
+				}
+				.woocommerce-button {
+					height: 50px;
+					background: var(--rbb-general-primary-color);
+					padding: 0 30px;
+					width: 100%;
+					border-radius: 5px;
+					margin-top: 30px;
+					color: #fff;
+					font-size: 11px;
+					transition: 0.35s;
+					&:hover {
+						background: var(--rbb-general-secondary-color);
+					}
+				}
+			}
+			.lost_password {
+				position: absolute;
+				bottom: 80px;
+				right: 0;
+				margin-bottom: 0;
+				a {
+					color: var(--rbb-general-body-text-color);
+				}
+			}
+		}
+	}
+	.grid-cols-3.gap-8 {
+		gap: 0;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		margin: 0;
+	}
+	#customer_login {
+		.u-column1 {
+			padding-right: 100px;
+			form {
+				position: relative;
+			}
+		}
+		.u-column2 {
+			padding-left: 100px;
+			border-left: 1px solid #eaeaea;
+			.woocommerce-form-row:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.u-column1,
+		.u-column2 {
+			width: 50%;
+			float: left;
+			padding-top: 100px;
+			padding-bottom: 100px;
+			h2 {
+				color: #222;
+				font-size: 24px;
+				margin-bottom: 1.36em;
+				position: relative;
+				display: inline-block;
+				&::before {
+					content: "";
+					left: -10px;
+					right: -10px;
+					height: 15px;
+					background: var(--rbb-general-secondary-color);
+					opacity: 0.2;
+					position: absolute;
+					bottom: 0;
+					z-index: -1;
+				}
+			}
+			.woocommerce-form-row {
+				margin-bottom: 20px;
+				label {
+					margin-bottom: 12px;
+					display: block;
+					font-weight: 600;
+					font-size: 12px;
+					.required {
+						color: #ff2a2a;
+					}
+				}
+			}
+			.form-row {
+				label {
+					display: flex;
+					[type="checkbox"] {
+						height: 20px;
+						width: 20px;
+						border-radius: 3px;
+						cursor: pointer;
+						border: 1px solid #d0d0d0;
+						color: var(--rbb-general-primary-color);
+					}
+					span {
+						padding-left: 10px;
+					}
+				}
+				.rememberme {
+					margin-right: 10px;
+				}
+				.woocommerce-form__input-checkbox {
+					&:focus {
+						box-shadow: none;
+					}
+				}
+				.woocommerce-button {
+					height: 50px;
+					background: var(--rbb-general-primary-color);
+					padding: 0 30px;
+					width: 100%;
+					border-radius: 5px;
+					margin-top: 30px;
+					color: #fff;
+					font-size: 11px;
+					transition: 0.35s;
+					&:hover {
+						background: var(--rbb-general-secondary-color);
+					}
+				}
+			}
+			.lost_password {
+				position: absolute;
+				bottom: 80px;
+				right: 0;
+				margin-bottom: 0;
+				a {
+					color: var(--rbb-general-body-text-color);
+				}
+			}
+			.woocommerce-privacy-policy-text {
+				font-size: 0.75rem;
+				line-height: 24px;
+				a {
+					font-weight: 500;
+					color: var(--rbb-general-link-color);
+					&:hover {
+						color: var(--rbb-general-link-hover-color);
+					}
+				}
+			}
+		}
+	}
+}
+// ....................Reset password ............
+.lost_reset_password {
+	max-width: 400px;
+	margin: 100px auto;
+	.woocommerce-form-row {
+		label {
+			display: block;
+			margin: 15px 0;
+			font-weight: 600;
+			font-size: 12px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	body:not(.logged-in) {
+		#customer_login {
+			.u-column1 {
+				padding: 100px 15px 100px 0;
+			}
+			.u-column2 {
+				padding: 100px 0 100px 15px;
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	body {
+		&:not(.logged-in) {
+			#customer_login {
+				.u-column1,
+				.u-column2 {
+					width: 100%;
+					border-left: none;
+					padding: 50px 0 0 0;
+				}
+				.u-column2 {
+					padding-bottom: 50px;
+				}
+			}
+		}
+		.account-form-popup {
+			background: #fff;
+			align-items: flex-start;
+			padding-top: 75px;
+			.rbb-modal-backdrop {
+				opacity: 1 !important;
+				background: transparent !important;
+			}
+			.rbb-modal-dialog {
+				width: 100%;
+				.rbb-modal-header {
+					.rbb-close-modal {
+						right: 50% !important;
+						transform: translateX(50%) !important;
+						background: var(--rbb-general-button-bg-color);
+						color: var(--rbb-general-heading-color);
+						font-weight: 700;
+						top: -57px;
+						&:hover {
+							background: var(--rbb-general-button-bg-color);
+							opacity: 0.8;
+						}
+					}
+				}
+				.modal-login {
+					height: 85vh;
+					overflow: auto;
+					border-radius: 0;
+				}
+			}
+		}
+	}
+}

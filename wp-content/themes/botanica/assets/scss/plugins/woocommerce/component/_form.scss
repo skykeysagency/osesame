@@ -1,0 +1,45 @@
+/**
+ * Forms
+ */
+.form-row {
+	&.woocommerce-validated {
+		input.input-text {
+			box-shadow: inset 2px 0 0 $woocommerce__success;
+		}
+	}
+
+	&.woocommerce-invalid {
+	}
+}
+
+.required {
+	color: var(--rbb-general-primary-color);
+}
+
+.rbb__input-radio {
+	input[type="radio"],
+	input[type="checkbox"] {
+		visibility: hidden;
+		opacity: 0;
+		height: 0;
+		width: 0;
+		display: none;
+	}
+	.presentation {
+		width: 17px;
+		height: 17px;
+		border: 1px solid $woocommerce__border-color-01;
+		background-color: #fff;
+		display: inline-block;
+		border-radius: 100%;
+		margin-right: 15px;
+		cursor: pointer;
+		vertical-align: top;
+	}
+	input:checked + .presentation,
+	input[type="hidden"] + .presentation {
+		border-color: var(--rbb-general-secondary-color);
+		background-color: var(--rbb-general-secondary-color);
+		box-shadow: 0 0 0 3px white inset;
+	}
+}

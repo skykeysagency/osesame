@@ -1,0 +1,109 @@
+// .................homepage vegetable-02.................
+.vegetable-02 {
+	.slick-slider {
+		.slick-dots {
+			li {
+				width: 10px;
+				padding: 5px 0;
+				button {
+					width: 9px;
+					height: 9px;
+					background: var(--rbb-general-secondary-color);
+				}
+				&.slick-active {
+					box-shadow: none;
+					button {
+						background: #fff;
+						&:hover {
+							background: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+	.banner-content {
+		.content {
+			&::before {
+				background: var(--rbb-general-primary-color);
+			}
+			.title {
+				color: #fff;
+			}
+			.circle {
+				background: var(--rbb-general-secondary-color);
+				border-top: var(--rbb-general-secondary-color);
+				border-bottom: var(--rbb-general-secondary-color);
+			}
+			&:first-child {
+				.circle {
+					border-left: none;
+				}
+			}
+			&:last-child {
+				.circle {
+					border-right: none;
+				}
+			}
+		}
+	}
+	.rbb_posts {
+		&.layout-2 {
+			.blog_item {
+				border: none;
+				.blog_readmore {
+					span {
+						font-size: 14px;
+						font-weight: bold;
+						color: var(--rbb-general-link-color);
+					}
+					&:hover {
+						span {
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+	.footer-newsletter {
+		margin-top: 0 !important;
+	}
+}
+// ................... gallery ..............
+.gallery-content {
+	.elementor-image-gallery {
+		overflow: hidden;
+		.gallery {
+			overflow: hidden;
+			margin: 0 -28.5%;
+			transition: transform 0.4s cubic-bezier(0.29, 0.63, 0.44, 1);
+			display: flex;
+			.gallery-item {
+				padding: 5px;
+				.gallery-icon {
+					overflow: hidden;
+					a {
+						overflow: hidden;
+						img {
+							transition: all 1.5s ease-out;
+						}
+						&:hover {
+							img {
+								transform: scale(1.07, 1.07);
+							}
+						}
+					}
+				}
+			}
+		}
+		@media (max-width: 767px) {
+			.gallery {
+				margin: 0 -40%;
+			}
+		}
+	}
+	.itemy_parallax {
+		margin-bottom: 0;
+	}
+}

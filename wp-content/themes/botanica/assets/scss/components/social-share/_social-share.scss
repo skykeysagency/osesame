@@ -1,0 +1,39 @@
+.rbb-social-share {
+	.rbb-social-share-inner {
+		.rbb-copy {
+			input {
+				border: 1px solid #eaeaea;
+				&:focus {
+					border: 1px solid var(--rbb-general-secondary-color);
+				}
+			}
+		}
+		.share-list {
+			a {
+				padding: 0 10px 0 0;
+				i {
+					width: 32px;
+					height: 32px;
+					line-height: 32px;
+					text-align: center;
+					border-radius: 100%;
+					transition: all 0.3s;
+					display: inline-block;
+					border: 1px solid #eaeaea;
+					color: var(--rbb-general-heading-color);
+				}
+				&:hover i {
+					color: #fff;
+					background: var(--rbb-general-primary-color);
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.rbb-social-share {
+		.rbb-modal-dialog {
+			width: 100%;
+		}
+	}
+}

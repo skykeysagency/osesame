@@ -1,0 +1,317 @@
+form.wpcf7-form {
+	.footer-form {
+		p {
+			margin-bottom: 0;
+		}
+		.wpcf7-form-control-wrap {
+			input {
+				border-radius: 50px;
+				background: #070608;
+				margin-bottom: 0;
+				border: 1px solid #070608;
+				&::placeholder {
+					text-transform: uppercase;
+					color: #3f3e43;
+					font-weight: 600;
+				}
+				&:focus,
+				&:hover {
+					border: 1px solid var(--rbb-general-primary-color);
+				}
+			}
+		}
+		.button {
+			z-index: 9;
+			height: 44px;
+			position: absolute;
+			top: 3px;
+			right: 3px;
+			width: auto;
+			border-radius: 44px;
+			min-width: 87px;
+			font-size: 0;
+			text-align: center;
+			line-height: 44px;
+			background: url(../images/email.svg) center no-repeat var(--rbb-general-primary-color);
+			border: 1px solid var(--rbb-general-primary-color);
+			&:hover {
+				background: url(../images/email.svg) center no-repeat var(--rbb-general-secondary-color);
+				border: 1px solid var(--rbb-general-secondary-color);
+			}
+		}
+		.wpcf7-spinner {
+			bottom: auto;
+			top: 9px;
+			left: auto;
+			right: 25px;
+		}
+	}
+	&.submitting {
+		.button {
+			background: url("") center no-repeat var(--rbb-general-primary-color);
+			&:hover {
+				background: url("") var(--rbb-general-secondary-color);
+			}
+		}
+		.wpcf7-spinner {
+			z-index: 11;
+		}
+	}
+}
+// ............ footer-1 ............
+body {
+	.footer-newsletter {
+		&::before {
+			content: "";
+			top: -120px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			height: 120px;
+		}
+	}
+	&.product-template-default {
+		.footer-newsletter {
+			&::before {
+				background: #e5f0ef;
+			}
+		}
+	}
+	&.single-post,
+	&.post-type-archive-product,
+	&.tax-product_tag,
+	&.tax-product_cat {
+		.footer-newsletter {
+			&::before {
+				background: var(--rbb-breadcrumb-background-color);
+			}
+		}
+	}
+	.elementor-shortcode {
+		.rbb_contact_shortcode_phone {
+			i {
+				font-size: 1.125rem;
+				color: var(--rbb-general-primary-color);
+			}
+			p {
+				padding-left: 20px;
+				margin-bottom: 0;
+				font-weight: 800;
+			}
+		}
+		.rbb_contact_shortcode_address,
+		.rbb_contact_shortcode_email {
+			i {
+				font-size: 1.125rem;
+				color: var(--rbb-general-primary-color);
+			}
+			p {
+				padding-left: 20px;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+.copyright {
+	a {
+		color: #fff;
+		transition: 0.3s;
+		&:hover {
+			color: var(--rbb-general-link-hover-color) !important;
+		}
+	}
+}
+.newsletter-top {
+	transform: translateY(-120px);
+	position: relative;
+	&::before {
+		content: "";
+		width: calc(100% + 12px);
+		z-index: -1;
+		height: 100%;
+		position: absolute;
+		border-radius: 28px;
+		transition: all 400ms ease;
+		background-color: var(--rbb-general-secondary-color);
+		left: -6px;
+		bottom: 0;
+		transform: rotate(0.9deg);
+	}
+	&.style2 {
+		&::before {
+			opacity: 0;
+			transform: rotate(0deg);
+		}
+		&:hover {
+			&::before {
+				opacity: 1;
+				transform: rotate(0.9deg);
+			}
+		}
+	}
+	form.wpcf7-form {
+		.footer-form {
+			.wpcf7-form-control-wrap {
+				margin-top: 10px;
+				input {
+					padding: 0 33px;
+					height: 58px;
+					border-radius: 58px;
+					background: transparent;
+					border: 1px solid var(--rbb-general-primary-color);
+					color: #fff;
+					outline: none;
+					&::placeholder {
+						font-size: 12px;
+						color: #fff;
+						text-transform: initial;
+						font-weight: 400;
+					}
+					&:focus,
+					&:hover {
+						background: color-mix(in srgb, var(--rbb-general-primary-color) 90%, #000 40%);
+					}
+				}
+			}
+			.button {
+				height: 58px;
+				font-size: var(--typography-button-font-size);
+				top: 0;
+				right: 0;
+				padding: 0 45px;
+				background: var(--rbb-general-primary-color);
+				border: 1px solid var(--rbb-general-primary-color);
+				background-image: none;
+				&:hover {
+					background: color-mix(in srgb, var(--rbb-general-primary-color) 90%, #fff 5%);
+					border: 1px solid color-mix(in srgb, var(--rbb-general-primary-color) 90%, #fff 5%);
+				}
+			}
+			.wpcf7-spinner {
+				top: 16px;
+				right: 54px;
+			}
+		}
+	}
+}
+.footer-title1,
+.footer-title2,
+.footer-title3 {
+	.elementor-icon-list-item {
+		a {
+			width: auto !important;
+			&:hover {
+				span {
+					color: var(--rbb-general-link-hover-color) !important;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 1200px) {
+	.bg-icon {
+		&::before {
+			content: "";
+			width: 187px;
+			height: 108px;
+			background: url(../images/elementor/footer/icon-footer.png) center no-repeat;
+			animation: iconbanner 3s linear infinite;
+			position: absolute;
+			bottom: 60px;
+			left: 0;
+		}
+		&::after {
+			content: "";
+			width: 221px;
+			height: 139px;
+			background: url(../images/elementor/footer/icon-footer2.png) center no-repeat;
+			animation: iconbanner 3s linear infinite;
+			position: absolute;
+			bottom: 10px;
+			right: 0;
+		}
+	}
+}
+@media (max-width: 1199px) {
+	.newsletter-top {
+		.icon-newsletter {
+			&::after {
+				width: 100px;
+				height: 35px;
+				bottom: 55px;
+				right: 4px;
+			}
+		}
+	}
+}
+@media (max-width: 991px) {
+	.newsletter-top {
+		.icon-newsletter {
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.newsletter-top {
+		&.style2 {
+			&::before {
+				opacity: 1;
+			}
+		}
+		form.wpcf7-form {
+			.footer-form {
+				.button {
+					padding: 0 25px;
+				}
+			}
+		}
+	}
+	.footer-title1,
+	.footer-title2,
+	.footer-title3 {
+		.elementor-heading-title {
+			position: relative;
+			&::before {
+				content: "";
+				width: 14px;
+				height: 1px;
+				background: #fff;
+				float: right;
+				font-size: 25px;
+				position: relative;
+				top: 7px;
+			}
+			&::after {
+				content: "";
+				width: 1px;
+				height: 14px;
+				background: #fff;
+				position: absolute;
+				top: 1px;
+				right: 7px;
+				transition: 0.3s;
+			}
+			&.active {
+				&::after {
+					display: none;
+				}
+			}
+		}
+		.footer-content,
+		.elementor-icon-list-items {
+			display: none;
+		}
+		&.style2 {
+			.elementor-heading-title {
+				&::before {
+					background: #000;
+				}
+				&::after {
+					background: #000;
+				}
+			}
+		}
+	}
+}

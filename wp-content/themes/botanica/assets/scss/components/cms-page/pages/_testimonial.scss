@@ -1,0 +1,63 @@
+// ................... page testimonial ...................
+.rbb_testimonial {
+	.pagetestimonial {
+		.content {
+			&::before {
+				content: "";
+				position: absolute;
+				top: 14px;
+				left: 0;
+				width: 40px;
+				height: 29px;
+				background: url(../images/elementor/widgets/testimonials/icon_quote.png);
+			}
+		}
+	}
+	.page-header {
+		.archive-description {
+			font-size: 24px;
+			text-align: center;
+			font-weight: 700;
+		}
+	}
+	article {
+		.content {
+			.text {
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 50%;
+					width: 44px;
+					height: 32px;
+					transform: translateX(-50%);
+					background: url("../images/elementor/widgets/testimonials/quote1.png");
+				}
+			}
+			.author {
+				img {
+					-webkit-transition: all ease-out 0.7s;
+					-moz-transition: all ease-out 0.7s;
+					-ms-transition: all ease-out 0.7s;
+					-o-transition: all ease-out 0.7s;
+					transition: all ease-out 0.7s;
+				}
+			}
+			&:hover {
+				.author {
+					img {
+						transition: all ease-out 0.7s;
+						-webkit-transform: scale(1.1, 1.1);
+						-ms-transform: scale(1.1, 1.1);
+						transform: scale(1.1, 1.1);
+					}
+				}
+			}
+		}
+		&#post-5558 {
+			@media (max-width: 767px) {
+				padding-bottom: 20px;
+			}
+		}
+	}
+}

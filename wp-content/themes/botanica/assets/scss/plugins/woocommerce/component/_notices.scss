@@ -1,0 +1,47 @@
+/**
+ * Notices
+ */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error,
+.woocommerce-noreviews,
+p.no-comments {
+}
+
+.woocommerce-info,
+.woocommerce-noreviews,
+p.no-comments {
+}
+
+.woocommerce-error {
+}
+
+.demo_store {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	padding: 1em;
+	background-color: $woocommerce__info;
+	z-index: 9999;
+}
+
+.rbb-alert__danger {
+	background-color: $woocommerce__error-background;
+	border-color: $woocommerce__error-border;
+	color: $woocommerce__error;
+}
+.woocommerce-notices-wrapper .rbb-alert__info,
+.rbb-alert__success {
+	background-color: $woocommerce__success-background;
+	border-color: $woocommerce__success-border;
+	color: $woocommerce__success;
+}
+
+.rbb-alert__info {
+	background-color: $woocommerce__info-background;
+	border-color: $woocommerce__info-border;
+	color: #fff;
+	align-items:center;
+}
