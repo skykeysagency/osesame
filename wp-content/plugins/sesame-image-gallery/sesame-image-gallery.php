@@ -118,9 +118,9 @@ final class Sesame_Image_Gallery
         require_once(__DIR__ . '/widgets/service-traiteur-widget.php');
 
         // Enregistrer les widgets
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Sesame_Image_Gallery_Widget());
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Sesame_Specialites_Widget());
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Sesame_Service_Traiteur_Widget());
+        \Elementor\Plugin::instance()->widgets_manager->register(new \Sesame_Image_Gallery_Widget());
+        \Elementor\Plugin::instance()->widgets_manager->register(new \Sesame_Specialites_Widget());
+        \Elementor\Plugin::instance()->widgets_manager->register(new \Sesame_Service_Traiteur_Widget());
     }
 
     /**

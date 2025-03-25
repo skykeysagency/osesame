@@ -26,7 +26,7 @@ class Sesame_Specialites_Widget extends \Elementor\Widget_Base
     /**
      * Enregistrer les contrôles du widget
      */
-    protected function _register_controls()
+    protected function register_controls()
     {
         // Ajouter cette section de contenu au début
         $this->start_controls_section(
@@ -487,81 +487,105 @@ class Sesame_Specialites_Widget extends \Elementor\Widget_Base
 
             <div class="sesame-products-grid">
                 <?php
-                $products_query = new WP_Query($args);
-
-                if ($products_query->have_posts()):
-                    while ($products_query->have_posts()):
-                        $products_query->the_post();
+                // Exécuter la requête WooCommerce
+                $loop = new WP_Query($args);
+                if ($loop->have_posts()) {
+                    while ($loop->have_posts()):
+                        $loop->the_post();
                         global $product;
 
-                        // Assurez-vous que c'est un produit valide
                         if (!$product || !$product->is_visible()) {
                             continue;
                         }
 
-                        // Obtenir les catégories du produit
-                        $categories = get_the_terms($product->get_id(), 'product_cat');
-                        $persons_meta = get_post_meta($product->get_id(), 'number_of_persons', true);
+                        // Obtenir les données du produit
+                        $product_id = $product->get_id();
+                        $product_url = get_permalink($product_id);
+                        $product_title = get_the_title();
+                        $product_image = wp_get_attachment_url(get_post_thumbnail_id($product_id)) ?: wc_placeholder_img_src('full');
+                        $price_html = $product->get_price_html();
+                        $add_to_cart_url = $product->add_to_cart_url();
+                        $add_to_cart_text = $product->add_to_cart_text();
+                        $product_description = $product->get_short_description();
+
+                        // Obtenir les données ACF si elles existent
+                        $portion_info = '';
+                        if (function_exists('get_field')) {
+                            $personnes = get_field('personnes', $product_id);
+                            if ($personnes) {
+                                $portion_info = sprintf(_n('Pour %d personne', 'Pour %d personnes', $personnes, 'sesame-gallery'), $personnes);
+                            }
+                        }
+
+                        // Gérer les badges
+                        $badges = array();
+                        if ($show_badges === 'yes') {
+                            if ($product->is_on_sale()) {
+                                $badges[] = esc_html__('Promotion', 'sesame-gallery');
+                            }
+
+                            if ($product->is_featured()) {
+                                $badges[] = esc_html__('Populaire', 'sesame-gallery');
+                            }
+
+                            if (!$product->is_in_stock()) {
+                                $badges[] = esc_html__('Rupture de stock', 'sesame-gallery');
+                            }
+                        }
                         ?>
                         <div class="sesame-product-item">
                             <div class="sesame-product-image-container">
-                                <?php if ($show_badges && !empty($categories)): ?>
+                                <?php if (!empty($badges)): ?>
                                     <div class="sesame-product-badges">
-                                        <?php foreach ($categories as $category): ?>
-                                            <span class="sesame-product-badge"><?php echo esc_html($category->name); ?></span>
+                                        <?php foreach ($badges as $badge): ?>
+                                            <span class="sesame-product-badge"><?php echo $badge; ?></span>
                                         <?php endforeach; ?>
                                     </div>
                                 <?php endif; ?>
 
-                                <a href="<?php echo esc_url(get_permalink()); ?>" class="sesame-product-link">
-                                    <?php echo $product->get_image('woocommerce_thumbnail', ['class' => 'sesame-product-image']); ?>
+                                <a href="<?php echo esc_url($product_url); ?>">
+                                    <img src="<?php echo esc_url($product_image); ?>" alt="<?php echo esc_attr($product_title); ?>"
+                                        class="sesame-product-image">
                                 </a>
 
-                                <div class="sesame-product-wishlist">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                        </path>
-                                    </svg>
-                                </div>
+                                <?php if (function_exists('woosw_init')): ?>
+                                    <div class="sesame-product-wishlist" data-id="<?php echo esc_attr($product_id); ?>">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                <?php endif; ?>
                             </div>
 
                             <div class="sesame-product-content">
-                                <?php if ($show_persons && !empty($persons_meta)): ?>
-                                    <div class="sesame-product-persons"><?php echo esc_html($persons_meta); ?></div>
+                                <?php if ($show_persons === 'yes' && !empty($portion_info)): ?>
+                                    <div class="sesame-product-persons"><?php echo esc_html($portion_info); ?></div>
                                 <?php endif; ?>
 
                                 <h3 class="sesame-product-title">
-                                    <a href="<?php echo esc_url(get_permalink()); ?>">
-                                        <?php echo esc_html($product->get_name()); ?>
-                                    </a>
+                                    <a href="<?php echo esc_url($product_url); ?>"><?php echo esc_html($product_title); ?></a>
                                 </h3>
 
-                                <?php if ($show_description): ?>
-                                    <div class="sesame-product-description">
-                                        <?php echo wp_trim_words($product->get_short_description(), 15, '...'); ?>
-                                    </div>
+                                <?php if ($show_description === 'yes' && !empty($product_description)): ?>
+                                    <div class="sesame-product-description"><?php echo wp_trim_words($product_description, 20); ?></div>
                                 <?php endif; ?>
 
-                                <div class="sesame-product-price">
-                                    <?php echo $product->get_price_html(); ?>
-                                </div>
+                                <div class="sesame-product-price"><?php echo $price_html; ?></div>
 
                                 <div class="sesame-product-add-to-cart">
                                     <?php
                                     echo apply_filters(
                                         'woocommerce_loop_add_to_cart_link',
                                         sprintf(
-                                            '<a href="%s" data-quantity="%s" class="%s ajax_add_to_cart" %s data-product_id="%d">%s</a>',
-                                            esc_url($product->add_to_cart_url()),
-                                            esc_attr(isset($quantity) ? $quantity : 1),
-                                            esc_attr('button'),
-                                            isset($attributes) ? wc_implode_html_attributes($attributes) : '',
-                                            esc_attr($product->get_id()),
-                                            '<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg></span> ' . esc_html($product->add_to_cart_text())
+                                            '<a href="%s" data-quantity="1" class="%s" %s>%s</a>',
+                                            esc_url($add_to_cart_url),
+                                            'button ajax_add_to_cart add_to_cart_button product_type_' . $product->get_type(),
+                                            'data-product_id="' . esc_attr($product_id) . '" data-product_sku="' . esc_attr($product->get_sku()) . '" aria-label="' . esc_attr($add_to_cart_text) . '"',
+                                            '<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></span> ' . esc_html($add_to_cart_text)
                                         ),
-                                        $product,
-                                        []
+                                        $product
                                     );
                                     ?>
                                 </div>
@@ -569,25 +593,36 @@ class Sesame_Specialites_Widget extends \Elementor\Widget_Base
                         </div>
                         <?php
                     endwhile;
-                else:
+                } else {
                     echo '<p>' . esc_html__('Aucun produit trouvé.', 'sesame-gallery') . '</p>';
-                endif;
-
+                }
                 wp_reset_postdata();
                 ?>
             </div>
 
-            <div class="sesame-view-all">
-                <a href="/boutique">
-                    Découvrir tous nos plateaux
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14"></path>
-                        <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                </a>
-            </div>
+            <?php if (!empty($settings['view_all_text']) && !empty($settings['view_all_url']['url'])): ?>
+                <div class="sesame-view-all">
+                    <a href="<?php echo esc_url($settings['view_all_url']['url']); ?>" <?php echo $settings['view_all_url']['is_external'] ? 'target="_blank"' : ''; ?>             <?php echo $settings['view_all_url']['nofollow'] ? 'rel="nofollow"' : ''; ?>>
+                        <?php echo esc_html($settings['view_all_text']); ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            <?php endif; ?>
         </div>
+        <?php
+    }
+
+    /**
+     * Injecter le CSS du widget
+     */
+    public function content_template()
+    {
+        ?>
+        <!-- Template pour l'éditeur Elementor -->
         <?php
     }
 }

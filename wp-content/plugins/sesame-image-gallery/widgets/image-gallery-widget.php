@@ -56,7 +56,7 @@ class Sesame_Image_Gallery_Widget extends \Elementor\Widget_Base
     /**
      * Enregistrer les contrôles du widget
      */
-    protected function _register_controls()
+    protected function register_controls()
     {
         // Section des Images
         $this->start_controls_section(
@@ -338,7 +338,7 @@ class Sesame_Image_Gallery_Widget extends \Elementor\Widget_Base
     /**
      * Injecter le CSS du widget
      */
-    public function _content_template()
+    public function content_template()
     {
         ?>
         <style>
@@ -362,33 +362,25 @@ class Sesame_Image_Gallery_Widget extends \Elementor\Widget_Base
 
                 background: linear-gradient(to bottom right, {
                         {
-                            {
-                            settings.glow_color_start
-                        }
+                        settings.glow_color_start
                     }
                 }
 
                 , {
                     {
-                        {
-                        settings.glow_color_middle
-                    }
+                    settings.glow_color_middle
                 }
             }
 
             , {
                 {
-                    {
-                    settings.glow_color_end
-                }
+                settings.glow_color_end
             }
             });
 
             opacity: {
                     {
-                        {
-                        settings.glow_opacity.size
-                    }
+                    settings.glow_opacity.size
                 }
             }
 
